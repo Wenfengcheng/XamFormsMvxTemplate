@@ -62,6 +62,24 @@ namespace XamForms.MvxTemplate.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Press me.
+        /// </summary>
+        internal static string MainPageButton {
+            get {
+                return ResourceManager.GetString("MainPageButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you!.
+        /// </summary>
+        internal static string MainPageButtonPressed {
+            get {
+                return ResourceManager.GetString("MainPageButtonPressed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hello Xamarin!.
         /// </summary>
         internal static string MainPageTitle {
