@@ -30,22 +30,10 @@ namespace $safeprojectname$
     /// </summary>
     internal class WaitTimes : IWaitTimes
     {
-        public TimeSpan GestureWaitTimeout
-        {
-            get
-            {
-                return TimeSpan.FromMinutes(1);
-            }
-        }
+        public TimeSpan GestureWaitTimeout => TimeSpan.FromMinutes(1);
 
-        public TimeSpan WaitForTimeout
-        {
-            get
-            {
-                return TimeSpan.FromMinutes(1);
-            }
-        }
+        public TimeSpan WaitForTimeout => TimeSpan.FromMinutes(1);
+
+        public TimeSpan GestureCompletionTimeout => TimeSpan.FromMinutes(1);
     }
-
 }
-

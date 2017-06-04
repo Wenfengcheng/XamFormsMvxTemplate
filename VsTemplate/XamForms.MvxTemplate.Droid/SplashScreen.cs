@@ -3,17 +3,17 @@ using Android.Content.PM;
 using MvvmCross.Droid.Views;
 using Xamarin.Forms;
 
+
 namespace $safeprojectname$
 {
     [Activity(
         Label = "$safeprojectname$"
         , MainLauncher = true
-        , Icon = "@drawable/icon"
+        //, Icon = "@mipmap/icon"
         , Theme = "@style/Theme.Splash"
         , NoHistory = true
         , ScreenOrientation = ScreenOrientation.Portrait)]
-    public class SplashScreen
-        : MvxSplashScreenActivity
+    public class SplashScreen : MvxSplashScreenActivity
     {
         public SplashScreen()
             : base(Resource.Layout.SplashScreen)
@@ -26,7 +26,7 @@ namespace $safeprojectname$
             if (!isInitializationComplete)
             {
                 isInitializationComplete = true;
-                StartActivity(typeof(MvxFormsApplicationActivity));
+                StartActivity(typeof(FormsApplicationActivity));
             }
         }
 
@@ -34,7 +34,8 @@ namespace $safeprojectname$
         {
             Forms.Init(this, bundle);
             // Leverage controls' StyleId attrib. to Xamarin.UITest
-            Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) => {
+            Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) =>
+            {
                 if (!string.IsNullOrWhiteSpace(e.View.StyleId))
                 {
                     e.NativeView.ContentDescription = e.View.StyleId;

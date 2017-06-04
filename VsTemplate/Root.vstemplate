@@ -16,24 +16,24 @@
 		<ProjectCollection>
 			<SolutionFolder Name="Src">
 				<ProjectTemplateLink ProjectName="$projectname$.Core">
-					XamForms.MvxTemplate.Core\Core.vstemplate
+					XamForms.MvxTemplate.Core\MyTemplate.vstemplate
 				</ProjectTemplateLink>
 				<ProjectTemplateLink ProjectName="$projectname$.Droid">
-					XamForms.MvxTemplate.Droid\Droid.vstemplate
+					XamForms.MvxTemplate.Droid\MyTemplate.vstemplate
 				</ProjectTemplateLink>
 				<ProjectTemplateLink ProjectName="$projectname$.iOS">
-					XamForms.MvxTemplate.iOS\iOS.vstemplate
+					XamForms.MvxTemplate.iOS\MyTemplate.vstemplate
 				</ProjectTemplateLink>
 				<ProjectTemplateLink ProjectName="$projectname$.UWP">
-					XamForms.MvxTemplate.UWP\UWP.vstemplate
+					XamForms.MvxTemplate.UWP\MyTemplate.vstemplate
 				</ProjectTemplateLink>
 			</SolutionFolder>
 			<SolutionFolder Name="Tests">
 				<ProjectTemplateLink ProjectName="$projectname$.UITests">
-					XamForms.MvxTemplate.UITests\UITests.vstemplate
+					XamForms.MvxTemplate.UITests\MyTemplate.vstemplate
 				</ProjectTemplateLink>
 				<ProjectTemplateLink ProjectName="$projectname$.UnitTests">
-					XamForms.MvxTemplate.UnitTests\UnitTests.vstemplate
+					XamForms.MvxTemplate.UnitTests\MyTemplate.vstemplate
 				</ProjectTemplateLink>
 			</SolutionFolder>
 		</ProjectCollection>

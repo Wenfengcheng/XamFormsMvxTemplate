@@ -62,6 +62,15 @@ namespace XamForms.MvxTemplate.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To Second Page.
+        /// </summary>
+        internal static string GoToSecondPageText {
+            get {
+                return ResourceManager.GetString("GoToSecondPageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Press me.
         /// </summary>
         internal static string MainPageButton {

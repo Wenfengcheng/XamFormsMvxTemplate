@@ -1,0 +1,1 @@
+MSBuild.exe VSIXProject.sln /p:VisualStudioVersion=15.0

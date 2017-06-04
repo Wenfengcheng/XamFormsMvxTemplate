@@ -62,6 +62,33 @@ namespace $safeprojectname$.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To Second Page.
+        /// </summary>
+        internal static string GoToSecondPageText {
+            get {
+                return ResourceManager.GetString("GoToSecondPageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Press me.
+        /// </summary>
+        internal static string MainPageButton {
+            get {
+                return ResourceManager.GetString("MainPageButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you!.
+        /// </summary>
+        internal static string MainPageButtonPressed {
+            get {
+                return ResourceManager.GetString("MainPageButtonPressed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hello Xamarin!.
         /// </summary>
         internal static string MainPageTitle {

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamForms.MvxTemplate.Core.Pages.SecondPage"
+             xmlns:res="clr-namespace:XamForms.MvxTemplate.Core.Resources;assembly=XamForms.MvxTemplate.Core"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms">
+  <StackLayout>
+    <Label Text="{Binding MainPageButtonText}"/>
+    <Button Text="Back" Command="{Binding BackCommand}" />
+  </StackLayout>
+</mvx:MvxContentPage>

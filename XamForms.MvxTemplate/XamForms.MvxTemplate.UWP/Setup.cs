@@ -1,23 +1,27 @@
-﻿using MvvmCross.Platform;
-using MvvmCross.Forms.Presenter.Core;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
-using Xamarin.Forms;
-using XamlControls = Windows.UI.Xaml.Controls;
+﻿using MvvmCross.Core.ViewModels;
+using MvvmCross.Forms.Uwp;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Platform;
 using Windows.ApplicationModel.Activation;
-using MvvmCross.WindowsUWP.Platform;
-using MvvmCross.WindowsUWP.Views;
-using MvvmCross.Forms.Presenter.WindowsUWP;
+using XamForms.MvxTemplate.Core;
+using XamlControls = Windows.UI.Xaml.Controls;
 
 namespace XamForms.MvxTemplate.UWP
 {
-    public class Setup : MvxWindowsSetup
+    public class Setup : MvxFormsWindowsSetup
     {
         private readonly LaunchActivatedEventArgs _launchActivatedEventArgs;
 
-        public Setup(XamlControls.Frame rootFrame, LaunchActivatedEventArgs e) : base(rootFrame)
+        public Setup(XamlControls.Frame rootFrame, LaunchActivatedEventArgs e) : base(rootFrame, e)
         {
             _launchActivatedEventArgs = e;
+        }
+
+        protected override void InitializeFirstChance()
+        {
+            base.InitializeFirstChance();
+
+            Mvx.RegisterSingleton<Core.Services.ILocalizeService>(new Services.LocalizeService());
         }
 
         protected override IMvxApplication CreateApp()
@@ -25,15 +29,9 @@ namespace XamForms.MvxTemplate.UWP
             return new Core.App();
         }
 
-        protected override IMvxWindowsViewPresenter CreateViewPresenter(IMvxWindowsFrame rootFrame)
+        protected override IMvxTrace CreateDebugTrace()
         {
-            Forms.Init(_launchActivatedEventArgs);
-
-            var xamarinFormsApp = new MvxFormsApp();
-            var presenter = new MvxFormsWindowsUWPPagePresenter(rootFrame, xamarinFormsApp);
-            Mvx.RegisterSingleton<IMvxViewPresenter>(presenter);
-
-            return presenter;
+            return new DebugTrace();
         }
     }
 }

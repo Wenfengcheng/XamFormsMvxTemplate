@@ -5,7 +5,7 @@ using $safeprojectname$.Model;
 
 namespace $safeprojectname$.Repository
 {
-    public abstract class BaseRepository<T> : IRepository<T> where T : BaseModel
+    public abstract class BaseRepository<T> : IRepository<T> where T : BaseModel, new()
     {
         private static string DbName = "Database.sqlite";
 

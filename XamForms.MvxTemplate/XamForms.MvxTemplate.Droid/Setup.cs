@@ -1,14 +1,13 @@
 using Android.Content;
-using MvvmCross.Platform;
-using MvvmCross.Droid.Platform;
-using MvvmCross.Droid.Views;
-using MvvmCross.Forms.Presenter.Droid;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
+using MvvmCross.Forms.Droid;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Platform;
+using XamForms.MvxTemplate.Core;
 
 namespace XamForms.MvxTemplate.Droid
 {
-    public class Setup : MvxAndroidSetup
+    public class Setup : MvxFormsAndroidSetup
     {
         public Setup(Context applicationContext)
             : base(applicationContext)
@@ -21,17 +20,15 @@ namespace XamForms.MvxTemplate.Droid
 
             Mvx.RegisterSingleton<Core.Services.ILocalizeService>(new Services.LocalizeService());
         }
+
         protected override IMvxApplication CreateApp()
         {
             return new Core.App();
         }
 
-        protected override IMvxAndroidViewPresenter CreateViewPresenter()
+        protected override IMvxTrace CreateDebugTrace()
         {
-            var presenter = new MvxFormsDroidPagePresenter();
-            Mvx.RegisterSingleton<IMvxViewPresenter>(presenter);
-
-            return presenter;
+            return new DebugTrace();
         }
     }
 }

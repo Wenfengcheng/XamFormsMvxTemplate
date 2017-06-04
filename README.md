@@ -1,8 +1,8 @@
-# XamFormsMvxTemplate
+# Xamarin Forms MvvmCross Template
 
-This is a project to build a Visual Studio 2017 extension to help you start developing with Xamarin.Forms and MvvmCross.
+This is a project to build a Visual Studio 2017 extension to help you start developing with Xamarin.Forms 2.3.4 and MvvmCross 5.0.2.
 
-You can download the extension from [the Visual Studio gallery] (https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936 "Visual Studio Extension").
+You can download the extension from [the Visual Studio gallery] (https://marketplace.visualstudio.com/items?itemName=PaulDatsiuk.XamarinFormswithMvvmCross5SolutionTemplate "Visual Studio Extension").
 
 ## Requirements
 
@@ -22,4 +22,5 @@ After installing the extension, when creating a new project in Visual Studio, yo
 Other small features that can be found in the project are:
 
 * Localization
+* New MvvmCross navigation service
 * (will continue to add more interesting stuff)

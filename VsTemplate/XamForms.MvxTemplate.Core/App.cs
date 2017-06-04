@@ -1,8 +1,10 @@
 ﻿using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform.IoC;
-using Xamarin.Forms;
 using MvvmCross.Platform;
+using MvvmCross.Platform.IoC;
+using Xamarin.Forms.Xaml;
+using $safeprojectname$.ViewModels;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace $safeprojectname$
 {
     public class App : MvxApplication
@@ -18,13 +20,10 @@ namespace $safeprojectname$
                 EndingWith("Repository")
                 .AsTypes()
                 .RegisterAsLazySingleton();
-                
-			if (Device.OS == TargetPlatform.Android || Device.OS == TargetPlatform.iOS)
-			{
-				Resources.AppResources.Culture = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
-			}
 
-            RegisterAppStart<ViewModels.MainViewModel>();
+            Resources.AppResources.Culture = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
+
+            RegisterAppStart<MainViewModel>();
         }
     }
 }
