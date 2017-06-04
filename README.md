@@ -1,6 +1,6 @@
 # XamFormsMvxTemplate
 
-This is a project to build a Visual Studio 2015 extension to help you start developing with Xamarin.Forms and MvvmCross.
+This is a project to build a Visual Studio 2017 extension to help you start developing with Xamarin.Forms and MvvmCross.
 
 You can download the extension from [the Visual Studio gallery] (https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936 "Visual Studio Extension").
 
