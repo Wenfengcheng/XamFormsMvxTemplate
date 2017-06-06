@@ -22,5 +22,6 @@ After installing the extension, when creating a new project in Visual Studio, yo
 Other small features that can be found in the project are:
 
 * Localization
+* Fody.PropertyChanged
 * New MvvmCross navigation service
 * (will continue to add more interesting stuff)

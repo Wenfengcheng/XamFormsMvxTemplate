@@ -21,6 +21,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="NegateBooleanConverter.cs">NegateBooleanConverter.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="DebugTrace.cs">DebugTrace.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="FodyWeavers.xml">FodyWeavers.xml</ProjectItem>
       <Folder Name="Model" TargetFolderName="Model">
         <ProjectItem ReplaceParameters="true" TargetFileName="BaseModel.cs">BaseModel.cs</ProjectItem>
       </Folder>
