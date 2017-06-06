@@ -3,6 +3,8 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Forms.Droid;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
 
 namespace XamForms.MvxTemplate.Droid
 {
@@ -18,6 +20,7 @@ namespace XamForms.MvxTemplate.Droid
             base.InitializeFirstChance();
 
             Mvx.RegisterSingleton<Core.Services.ILocalizeService>(new Services.LocalizeService());
+            Mvx.RegisterSingleton<ISettings>(CrossSettings.Current);
         }
 
         protected override IMvxApplication CreateApp()
