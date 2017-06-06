@@ -4,7 +4,6 @@ using MvvmCross.iOS.Platform;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using UIKit;
-using XamForms.MvxTemplate.Core;
 
 namespace XamForms.MvxTemplate.iOS
 {
@@ -29,7 +28,7 @@ namespace XamForms.MvxTemplate.iOS
 
         protected override IMvxTrace CreateDebugTrace()
         {
-            return new DebugTrace();
+            return new Core.DebugTrace();
         }
     }
 }

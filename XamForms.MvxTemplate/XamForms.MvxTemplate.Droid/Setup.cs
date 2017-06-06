@@ -3,7 +3,6 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Forms.Droid;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
-using XamForms.MvxTemplate.Core;
 
 namespace XamForms.MvxTemplate.Droid
 {
@@ -28,7 +27,7 @@ namespace XamForms.MvxTemplate.Droid
 
         protected override IMvxTrace CreateDebugTrace()
         {
-            return new DebugTrace();
+            return new Core.DebugTrace();
         }
     }
 }

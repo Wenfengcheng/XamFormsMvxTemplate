@@ -3,7 +3,6 @@ using MvvmCross.Forms.Uwp;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using Windows.ApplicationModel.Activation;
-using XamForms.MvxTemplate.Core;
 using XamlControls = Windows.UI.Xaml.Controls;
 
 namespace XamForms.MvxTemplate.UWP
@@ -31,7 +30,7 @@ namespace XamForms.MvxTemplate.UWP
 
         protected override IMvxTrace CreateDebugTrace()
         {
-            return new DebugTrace();
+            return new Core.DebugTrace();
         }
     }
 }
