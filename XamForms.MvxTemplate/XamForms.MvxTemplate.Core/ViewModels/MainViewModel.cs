@@ -12,39 +12,24 @@ namespace XamForms.MvxTemplate.Core.ViewModels
         public MainViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
+
+            ButtonText = AppResources.MainPageButton;
         }
 
-        public IMvxCommand PressMeCommand => new MvxCommand(PressMe);
-
-        public IMvxAsyncCommand GoToSecondPageCommand
-        {
-            get
+        public IMvxCommand PressMeCommand =>
+            new MvxCommand(() =>
             {
-                return new MvxAsyncCommand(async () =>
-                {
-                    var param = new Dictionary<string, string> { { "ButtonText", ButtonText } };
+                ButtonText = AppResources.MainPageButtonPressed;
+            });
 
-                    await _navigationService.Navigate<SecondViewModel, Dictionary<string, string>>(param);
-                });
-            }
-        }
-
-        private string _buttonText = AppResources.MainPageButton;
-        public string ButtonText
-        {
-            get
+        public IMvxAsyncCommand GoToSecondPageCommand =>
+            new MvxAsyncCommand(async () =>
             {
-                return _buttonText;
-            }
-            set
-            {
-                SetProperty(ref _buttonText, value);
-            }
-        }
+                var param = new Dictionary<string, string> { { "ButtonText", ButtonText } };
 
-        public void PressMe()
-        {
-            ButtonText = AppResources.MainPageButtonPressed;
-        }
+                await _navigationService.Navigate<SecondViewModel, Dictionary<string, string>>(param);
+            });
+
+        public string ButtonText { get; set; }
     }
 }

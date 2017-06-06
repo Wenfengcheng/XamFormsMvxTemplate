@@ -13,20 +13,11 @@ namespace XamForms.MvxTemplate.Core.ViewModels
         public SecondViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
+
+            MainPageButtonText = "test";
         }
 
-        private string _mainPageButtonText = "test";
-        public string MainPageButtonText
-        {
-            get
-            {
-                return _mainPageButtonText;
-            }
-            set
-            {
-                SetProperty(ref _mainPageButtonText, value);
-            }
-        }
+        public string MainPageButtonText { get; set; }
 
         public IMvxAsyncCommand BackCommand => new MvxAsyncCommand(() => _navigationService.Close(this));
 
