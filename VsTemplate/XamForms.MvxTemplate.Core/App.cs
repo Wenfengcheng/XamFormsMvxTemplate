@@ -1,8 +1,9 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
 using Xamarin.Forms.Xaml;
-using $safeprojectname$.ViewModels;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace $safeprojectname$
@@ -23,7 +24,7 @@ namespace $safeprojectname$
 
             Resources.AppResources.Culture = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
 
-            RegisterAppStart<MainViewModel>();
+            RegisterAppStart<ViewModels.MainViewModel>();
         }
     }
 }

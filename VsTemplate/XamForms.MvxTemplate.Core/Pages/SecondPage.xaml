@@ -5,6 +5,7 @@
              xmlns:res="clr-namespace:$safeprojectname$.Resources;assembly=$safeprojectname$"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms">
   <StackLayout>
+    <Entry Text="{Binding SuperNumber}"/>
     <Label Text="{Binding MainPageButtonText}"/>
     <Button Text="Back" Command="{Binding BackCommand}" />
   </StackLayout>

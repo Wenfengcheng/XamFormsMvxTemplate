@@ -1,0 +1,4 @@
+replace next text in all project files
+
+<Name>XamForms.MvxTemplate.Core</Name>
+<Name>$safeprojectname$</Name>

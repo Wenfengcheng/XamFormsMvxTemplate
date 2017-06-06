@@ -3,8 +3,9 @@ using MvvmCross.Forms.iOS;
 using MvvmCross.iOS.Platform;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
 using UIKit;
-using XamForms.MvxTemplate.Core;
 
 namespace $safeprojectname$
 {
@@ -20,6 +21,7 @@ namespace $safeprojectname$
             base.InitializeFirstChance();
 
             Mvx.RegisterSingleton<Core.Services.ILocalizeService>(new Services.LocalizeService());
+            Mvx.RegisterSingleton<ISettings>(CrossSettings.Current);
         }
 
         protected override IMvxApplication CreateApp()
@@ -29,7 +31,7 @@ namespace $safeprojectname$
 
         protected override IMvxTrace CreateDebugTrace()
         {
-            return new DebugTrace();
+            return new Core.DebugTrace();
         }
     }
 }

@@ -3,7 +3,8 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Forms.Droid;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
-using XamForms.MvxTemplate.Core;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
 
 namespace $safeprojectname$
 {
@@ -19,6 +20,7 @@ namespace $safeprojectname$
             base.InitializeFirstChance();
 
             Mvx.RegisterSingleton<Core.Services.ILocalizeService>(new Services.LocalizeService());
+            Mvx.RegisterSingleton<ISettings>(CrossSettings.Current);
         }
 
         protected override IMvxApplication CreateApp()
@@ -28,7 +30,7 @@ namespace $safeprojectname$
 
         protected override IMvxTrace CreateDebugTrace()
         {
-            return new DebugTrace();
+            return new Core.DebugTrace();
         }
     }
 }

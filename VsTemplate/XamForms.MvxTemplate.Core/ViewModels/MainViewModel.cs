@@ -1,25 +1,28 @@
 ﻿using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
+using Plugin.Settings.Abstractions;
 using System.Collections.Generic;
-using $safeprojectname$.Resources;
+using $safeprojectname$.Helpers;
 
 namespace $safeprojectname$.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
         private readonly IMvxNavigationService _navigationService;
+        private readonly ISettings _settings;
 
-        public MainViewModel(IMvxNavigationService navigationService)
+        public MainViewModel(IMvxNavigationService navigationService, ISettings settings)
         {
             _navigationService = navigationService;
+            _settings = settings;
 
-            ButtonText = AppResources.MainPageButton;
+            ButtonText = Resources.AppResources.MainPageButton;
         }
 
         public IMvxCommand PressMeCommand =>
             new MvxCommand(() =>
             {
-                ButtonText = AppResources.MainPageButtonPressed;
+                ButtonText = Resources.AppResources.MainPageButtonPressed;
             });
 
         public IMvxAsyncCommand GoToSecondPageCommand =>
@@ -31,5 +34,11 @@ namespace $safeprojectname$.ViewModels
             });
 
         public string ButtonText { get; set; }
+
+        public int SuperNumber
+        {
+            get { return _settings.GetSuperNumber(); }
+            set { _settings.SetSuperNumber(value); }
+        }
     }
 }
