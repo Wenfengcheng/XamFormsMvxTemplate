@@ -1,17 +1,15 @@
 ﻿using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
-using Plugin.Settings.Abstractions;
 using System.Collections.Generic;
-using XamForms.MvxTemplate.Core.Helpers;
 
 namespace XamForms.MvxTemplate.Core.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
         private readonly IMvxNavigationService _navigationService;
-        private readonly ISettings _settings;
+        private readonly Services.IAppSettings _settings;
 
-        public MainViewModel(IMvxNavigationService navigationService, ISettings settings)
+        public MainViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings)
         {
             _navigationService = navigationService;
             _settings = settings;
@@ -37,8 +35,8 @@ namespace XamForms.MvxTemplate.Core.ViewModels
 
         public int SuperNumber
         {
-            get { return _settings.GetSuperNumber(); }
-            set { _settings.SetSuperNumber(value); }
+            get { return _settings.SuperNumber; }
+            set { _settings.SuperNumber = value; }
         }
     }
 }
