@@ -22,9 +22,7 @@
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="DebugTrace.cs">DebugTrace.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="FodyWeavers.xml">FodyWeavers.xml</ProjectItem>
-      <Folder Name="Helpers" TargetFolderName="Helpers">
-        <ProjectItem ReplaceParameters="true" TargetFileName="SettingExtensions.cs">SettingExtensions.cs</ProjectItem>
-      </Folder>
+      <Folder Name="Helpers" TargetFolderName="Helpers" />
       <Folder Name="Model" TargetFolderName="Model">
         <ProjectItem ReplaceParameters="true" TargetFileName="BaseModel.cs">BaseModel.cs</ProjectItem>
       </Folder>
@@ -56,6 +54,8 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="TranslateExtension.cs">TranslateExtension.cs</ProjectItem>
       </Folder>
       <Folder Name="Services" TargetFolderName="Services">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AppSettings.cs">AppSettings.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IAppSettings.cs">IAppSettings.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ILocalizeService.cs">ILocalizeService.cs</ProjectItem>
       </Folder>
       <Folder Name="ViewModels" TargetFolderName="ViewModels">

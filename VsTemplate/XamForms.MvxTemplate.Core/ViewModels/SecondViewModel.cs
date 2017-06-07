@@ -1,20 +1,18 @@
 ﻿using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
-using Plugin.Settings.Abstractions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using $safeprojectname$.Helpers;
 
 namespace $safeprojectname$.ViewModels
 {
     public class SecondViewModel : MvxViewModel<Dictionary<string, string>>
     {
         private readonly IMvxNavigationService _navigationService;
-        private readonly ISettings _settings;
+        private readonly Services.IAppSettings _settings;
 
         private Dictionary<string, string> _parameter;
 
-        public SecondViewModel(IMvxNavigationService navigationService, ISettings settings)
+        public SecondViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings)
         {
             _navigationService = navigationService;
             _settings = settings;
@@ -38,8 +36,8 @@ namespace $safeprojectname$.ViewModels
 
         public int SuperNumber
         {
-            get { return _settings.GetSuperNumber(); }
-            set { _settings.SetSuperNumber(value); }
+            get { return _settings.SuperNumber; }
+            set { _settings.SuperNumber = value; }
         }
     }
 }

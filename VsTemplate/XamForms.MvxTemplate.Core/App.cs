@@ -1,8 +1,6 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
-using Plugin.Settings;
-using Plugin.Settings.Abstractions;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -21,6 +19,8 @@ namespace $safeprojectname$
                 EndingWith("Repository")
                 .AsTypes()
                 .RegisterAsLazySingleton();
+
+            Mvx.RegisterType<Services.IAppSettings, Services.AppSettings>();
 
             Resources.AppResources.Culture = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
 

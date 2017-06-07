@@ -15,24 +15,24 @@
 	<TemplateContent>
 		<ProjectCollection>
 			<SolutionFolder Name="Src">
-				<ProjectTemplateLink ProjectName="$projectname$.Core">
+				<ProjectTemplateLink ProjectName="$projectname$.Core" CopyParameters="true">
 					XamForms.MvxTemplate.Core\MyTemplate.vstemplate
 				</ProjectTemplateLink>
-				<ProjectTemplateLink ProjectName="$projectname$.Droid">
+				<ProjectTemplateLink ProjectName="$projectname$.Droid" CopyParameters="true">
 					XamForms.MvxTemplate.Droid\MyTemplate.vstemplate
 				</ProjectTemplateLink>
-				<ProjectTemplateLink ProjectName="$projectname$.iOS">
+				<ProjectTemplateLink ProjectName="$projectname$.iOS" CopyParameters="true">
 					XamForms.MvxTemplate.iOS\MyTemplate.vstemplate
 				</ProjectTemplateLink>
-				<ProjectTemplateLink ProjectName="$projectname$.UWP">
+				<ProjectTemplateLink ProjectName="$projectname$.UWP" CopyParameters="true">
 					XamForms.MvxTemplate.UWP\MyTemplate.vstemplate
 				</ProjectTemplateLink>
 			</SolutionFolder>
 			<SolutionFolder Name="Tests">
-				<ProjectTemplateLink ProjectName="$projectname$.UITests">
+				<ProjectTemplateLink ProjectName="$projectname$.UITests" CopyParameters="true">
 					XamForms.MvxTemplate.UITests\MyTemplate.vstemplate
 				</ProjectTemplateLink>
-				<ProjectTemplateLink ProjectName="$projectname$.UnitTests">
+				<ProjectTemplateLink ProjectName="$projectname$.UnitTests" CopyParameters="true">
 					XamForms.MvxTemplate.UnitTests\MyTemplate.vstemplate
 				</ProjectTemplateLink>
 			</SolutionFolder>
