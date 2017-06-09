@@ -38,6 +38,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Behaviors\BehaviorBase.cs" />
+    <Compile Include="Behaviors\EventToCommandBehavior.cs" />
     <Compile Include="Converters\NegateBooleanConverter.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="Model\BaseModel.cs" />
@@ -189,7 +191,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Behaviors\" />
     <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
