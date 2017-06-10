@@ -1,4 +1,4 @@
-# Not longer actively supported
+# No longer actively supported
 
 For new features and upgrade to newer MvvmCross, Xamarin Forms versions, and support for newer versions of Visual Studio, take a look at the following [extension](https://marketplace.visualstudio.com/items?itemName=PaulDatsiuk.XamarinFormswithMvvmCross5SolutionTemplate), or the following [repo](https://github.com/JTOne123/XamFormsMvxTemplate).
 
