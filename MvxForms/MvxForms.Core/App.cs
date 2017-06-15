@@ -1,6 +1,8 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
+using MvvmCross.Platform.Platform;
+using MvvmCross.Plugins.Json;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -21,6 +23,7 @@ namespace MvxForms.Core
                 .RegisterAsLazySingleton();
 
             Mvx.RegisterType<Services.IAppSettings, Services.AppSettings>();
+            Mvx.RegisterType<IMvxJsonConverter, MvxJsonConverter>();
 
             Resources.AppResources.Culture = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
 
