@@ -3,6 +3,7 @@ using MvvmCross.Forms.iOS;
 using MvvmCross.iOS.Platform;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
+using MvvmCross.Plugins.Sqlite;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 using UIKit;

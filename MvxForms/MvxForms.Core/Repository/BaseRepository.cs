@@ -9,11 +9,11 @@ namespace MvxForms.Core.Repository
     {
         private static string DbName = "Database.sqlite";
 
-        private IMvxSqliteConnectionFactory _connectionFactory;
+        private readonly IMvxSqliteConnectionFactory _connectionFactory;
 
-        public BaseRepository()
+        public BaseRepository(IMvxSqliteConnectionFactory connectionFactory)
         {
-            _connectionFactory = Mvx.Resolve<IMvxSqliteConnectionFactory>();
+            _connectionFactory = connectionFactory;
             
             using (var conn = _connectionFactory.GetConnection(DbName))
             {

@@ -42,11 +42,14 @@
     <Compile Include="Behaviors\EventToCommandBehavior.cs" />
     <Compile Include="Converters\NegateBooleanConverter.cs" />
     <Compile Include="DebugTrace.cs" />
+    <Compile Include="Model\BookModel.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Pages\SecondPage.xaml.cs">
       <DependentUpon>SecondPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repository\BaseRepository.cs" />
+    <Compile Include="Repository\BookRepository.cs" />
+    <Compile Include="Repository\IBookRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Resources\AppResources.ru-RU.Designer.cs">
       <DependentUpon>AppResources.ru-RU.resx</DependentUpon>

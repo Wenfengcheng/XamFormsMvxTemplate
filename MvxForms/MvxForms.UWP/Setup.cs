@@ -2,6 +2,7 @@
 using MvvmCross.Forms.Uwp;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
+using MvvmCross.Plugins.Sqlite;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 using Windows.ApplicationModel.Activation;

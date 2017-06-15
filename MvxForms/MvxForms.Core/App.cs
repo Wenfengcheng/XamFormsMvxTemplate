@@ -4,6 +4,7 @@ using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
 using MvvmCross.Platform.Platform;
 using MvvmCross.Plugins.Json;
+using MvxForms.Core.Repository;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]

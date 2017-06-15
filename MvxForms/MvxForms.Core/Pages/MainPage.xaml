@@ -22,6 +22,7 @@
              StyleId="MainPageTitleLbl" />
       <Button Text="{Binding ButtonText}" Command="{Binding PressMeCommand}" />
       <Button Text="{res:Translate GoToSecondPageText}" Command="{Binding GoToSecondPageCommand}" />
+      <Button Text="Test sqlite" Command="{Binding SqliteTestCommand}" />
     </StackLayout>
   </Grid>
 </mvx:MvxContentPage>

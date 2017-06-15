@@ -4,7 +4,7 @@ namespace MvxForms.Core.Model
 {
     public class BaseModel
     {
-        [PrimaryKey,AutoIncrement]
+        [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
     }
 }
