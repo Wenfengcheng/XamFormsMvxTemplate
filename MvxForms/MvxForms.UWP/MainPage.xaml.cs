@@ -2,6 +2,7 @@
 using MvvmCross.Core.Views;
 using MvvmCross.Forms.Uwp.Presenters;
 using MvvmCross.Platform;
+using System.Text;
 using Xamarin.Forms.Platform.UWP;
 
 namespace MvxForms.UWP
@@ -21,6 +22,8 @@ namespace MvxForms.UWP
             var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsUwpPagePresenter;
 
             LoadApplication(presenter.MvxFormsApp);
+
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
     }
 }
