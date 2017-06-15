@@ -1,9 +1,13 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 
 namespace MvxForms.UnitTests
 {
-    [TestClass]
     public class Tests
     {
+        [Fact]
+        public void PassingTest()
+        {
+            Assert.Equal(4, 4);
+        }
     }
 }
