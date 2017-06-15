@@ -1,3 +1,4 @@
+using Acr.UserDialogs;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
@@ -19,6 +20,8 @@ namespace MvxForms.Droid
             base.OnCreate(bundle);
 
             Forms.Init(this, bundle);
+
+            UserDialogs.Init(this);
 
             var app = new MvxFormsApplication();
             var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsDroidPagePresenter;
