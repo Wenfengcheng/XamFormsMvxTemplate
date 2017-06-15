@@ -1,4 +1,5 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Acr.UserDialogs;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
 using MvvmCross.Platform.Platform;
@@ -24,6 +25,7 @@ namespace MvxForms.Core
 
             Mvx.RegisterType<Services.IAppSettings, Services.AppSettings>();
             Mvx.RegisterType<IMvxJsonConverter, MvxJsonConverter>();
+            Mvx.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
 
             Resources.AppResources.Culture = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
 
