@@ -25,4 +25,6 @@ Other small features that can be found in the project are:
 * Fody.PropertyChanged
 * New MvvmCross navigation service
 * Settings API
+* Dialogs
+* xUnit (testing in VS and after build)
 * (will continue to add more interesting stuff)
