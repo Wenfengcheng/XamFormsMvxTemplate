@@ -25,7 +25,7 @@ namespace MvxForms.Droid
 
             var app = new MvxFormsApplication();
             var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsDroidPagePresenter;
-            presenter.MvxFormsApp = app;
+            presenter.FormsApplication = app;
 
             LoadApplication(app);
 
