@@ -141,31 +141,26 @@
       <Version>5.3.3</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross">
-      <Version>5.0.2</Version>
+      <Version>5.0.6</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Binding">
-      <Version>5.0.2</Version>
+      <Version>5.0.6</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Core">
-      <Version>5.0.2</Version>
+      <Version>5.0.6</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Forms">
-      <Version>5.0.2</Version>
+      <Version>5.0.6</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.Json">
-      <Version>5.0.2</Version>
+      <Version>5.0.6</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugins.Settings">
-      <Version>2.5.8</Version>
+      <Version>3.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>2.3.4.247</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <SDKReference Include="SQLite.UWP.2015, Version=3.19.2">
-      <Name>SQLite for Universal Windows Platform</Name>
-    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
