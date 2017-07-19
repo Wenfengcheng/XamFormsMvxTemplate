@@ -1,11 +1,12 @@
 # Xamarin Forms MvvmCross Template
 
-This is a project to build a Visual Studio 2017 extension to help you start developing with Xamarin.Forms 2.3.4 and MvvmCross 5.0.2.
+This is a project to build a Visual Studio 2017 extension to help you start developing with Xamarin.Forms 2.3.4 and MvvmCross 5.
 
 You can download the extension from [the Visual Studio gallery] (https://marketplace.visualstudio.com/items?itemName=PaulDatsiuk.XamarinFormswithMvvmCross5SolutionTemplate "Visual Studio Extension").
 
 ## Requirements
 
+[SQLite does not support yet. New SQLite approach is coming...]
 The projects generated require a reference to the SQLite libraries, and because of issues with the latest version of Nuget, the UWP project cannot get that reference from the MvvmCross SQLite package. __In order to be able to resolve this reference, you need to install the SQLite for Universal Windows Platform extension.__ You can download the extension from [here] (https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936 "SQLite for Universal Windows Platform"). 
 
 ## What to expect
