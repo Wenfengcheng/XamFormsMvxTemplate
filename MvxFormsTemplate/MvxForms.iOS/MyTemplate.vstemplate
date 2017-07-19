@@ -18,7 +18,6 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="AppDelegate.cs">AppDelegate.cs</ProjectItem>
       <Folder Name="Bootstrap" TargetFolderName="Bootstrap">
         <ProjectItem ReplaceParameters="true" TargetFileName="JsonPluginBootstrap.cs">JsonPluginBootstrap.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="SqlitePluginBootstrap.cs">SqlitePluginBootstrap.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="false" TargetFileName="Entitlements.plist">Entitlements.plist</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="Info.plist">Info.plist</ProjectItem>

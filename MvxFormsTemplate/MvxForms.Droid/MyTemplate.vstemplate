@@ -20,7 +20,6 @@
       </Folder>
       <Folder Name="Bootstrap" TargetFolderName="Bootstrap">
         <ProjectItem ReplaceParameters="true" TargetFileName="JsonPluginBootstrap.cs">JsonPluginBootstrap.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="SqlitePluginBootstrap.cs">SqlitePluginBootstrap.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="FormsApplicationActivity.cs">FormsApplicationActivity.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="LinkerPleaseInclude.cs">LinkerPleaseInclude.cs</ProjectItem>

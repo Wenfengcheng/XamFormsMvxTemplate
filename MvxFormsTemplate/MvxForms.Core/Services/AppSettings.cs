@@ -17,8 +17,8 @@ namespace $safeprojectname$.Services
 
         public int SuperNumber
         {
-            get { return _settings.GetValueOrDefault<int>(SuperNumberKey, 1); }
-            set { _settings.AddOrUpdateValue<int>(SuperNumberKey, value); }
+            get { return _settings.GetValueOrDefault(SuperNumberKey, 1); }
+            set { _settings.AddOrUpdateValue(SuperNumberKey, value); }
         }
     }
 }
