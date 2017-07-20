@@ -173,6 +173,7 @@
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Repository\" />
+    <Folder Include="Triggers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
