@@ -3,10 +3,10 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
+using MvvmCross.Droid.Views;
 using MvvmCross.Forms.Core;
 using MvvmCross.Forms.Droid;
-using MvvmCross.Forms.Droid.Presenters;
+using MvvmCross.Forms.Presenters;
 using MvvmCross.Platform;
 using Xamarin.Forms;
 
@@ -24,7 +24,7 @@ namespace $safeprojectname$
             UserDialogs.Init(this);
 
             var app = new MvxFormsApplication();
-            var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsDroidPagePresenter;
+            var presenter = Mvx.Resolve<IMvxAndroidViewPresenter>() as IMvxFormsPagePresenter;
             presenter.FormsApplication = app;
 
             LoadApplication(app);
