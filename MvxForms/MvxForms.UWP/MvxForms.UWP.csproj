@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Bootstrap\" />
+    <Folder Include="CustomRenderers\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
