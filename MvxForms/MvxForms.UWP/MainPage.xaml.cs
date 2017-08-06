@@ -25,7 +25,6 @@ namespace MvxForms.UWP
             start.Start();
 
             var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsUwpPagePresenter;
-
             LoadApplication(presenter.FormsApplication);
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);

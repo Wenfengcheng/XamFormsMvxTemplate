@@ -9,12 +9,10 @@ using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
 using MvvmCross.Platform.Platform;
 using MvvmCross.Plugins.Json;
-using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MvxForms.Core
 {
-    public class App : MvxApplication
+    public class MvxApp : MvxApplication
     {
         public override void Initialize()
         {

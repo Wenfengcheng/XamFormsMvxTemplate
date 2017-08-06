@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------
 
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Forms.Core;
 using MvvmCross.Forms.Uwp;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
@@ -31,9 +32,14 @@ namespace MvxForms.UWP
             Mvx.RegisterSingleton<ISettings>(CrossSettings.Current);
         }
 
+        protected override MvxFormsApplication CreateFormsApplication()
+        {
+            return new Core.FormsApp();
+        }
+
         protected override IMvxApplication CreateApp()
         {
-            return new Core.App();
+            return new Core.MvxApp();
         }
 
         protected override IMvxTrace CreateDebugTrace()
