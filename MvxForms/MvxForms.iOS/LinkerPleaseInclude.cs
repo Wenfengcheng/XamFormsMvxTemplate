@@ -1,3 +1,8 @@
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
 using System.Collections.Specialized;
 using System.Windows.Input;
 using Foundation;
@@ -12,7 +17,7 @@ namespace MvxForms.iOS
     [Foundation.Preserve(AllMembers = true)]
     public class LinkerPleaseInclude
     {
-		public void Include(MvxTaskBasedBindingContext c)
+        public void Include(MvxTaskBasedBindingContext c)
         {
             c.Dispose();
             var c2 = new MvxTaskBasedBindingContext();
@@ -101,13 +106,13 @@ namespace MvxForms.iOS
 
         public void Include(ICommand command)
         {
-           command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
+            command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
         }
 
         public void Include(MvvmCross.Platform.IoC.MvxPropertyInjector injector)
         {
             injector = new MvvmCross.Platform.IoC.MvxPropertyInjector();
-        } 
+        }
 
         public void Include(System.ComponentModel.INotifyPropertyChanged changed)
         {

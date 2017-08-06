@@ -1,3 +1,8 @@
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
 using System.Diagnostics;
 using System.Globalization;
 
@@ -9,7 +14,8 @@ namespace MvxForms.Droid.Services
         {
             var androidLocale = Java.Util.Locale.Default;
             var netLanguage = androidLocale.ToString().Replace("_", "-"); // turns pt_BR into pt-BR
-            try {
+            try
+            {
                 return new CultureInfo(netLanguage);
             }
             catch (CultureNotFoundException e)

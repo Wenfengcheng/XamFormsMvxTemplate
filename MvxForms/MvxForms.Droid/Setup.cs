@@ -1,3 +1,8 @@
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
 using Android.Content;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Forms.Droid;

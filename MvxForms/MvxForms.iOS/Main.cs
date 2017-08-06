@@ -1,4 +1,9 @@
-﻿using UIKit;
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
+using UIKit;
 
 namespace MvxForms.iOS
 {

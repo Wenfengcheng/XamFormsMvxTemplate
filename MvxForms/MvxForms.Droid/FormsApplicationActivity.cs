@@ -1,3 +1,8 @@
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
 using Acr.UserDialogs;
 using Android.App;
 using Android.Content.PM;
