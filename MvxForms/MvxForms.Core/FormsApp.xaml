@@ -6,18 +6,17 @@
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms">
 	<mvx:MvxFormsApplication.Resources>
 		<ResourceDictionary>
-			<Color x:Key="Primary">#009688</Color>
-			<Color x:Key="PrimaryDark">#00867d</Color>
-            <Color x:Key="PrimaryLight">#82e9de</Color>
-			<Color x:Key="Accent">#96d1ff</Color>
-			<Color x:Key="LightBackgroundColor">#FAFAFA</Color>
-			<Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
-			<Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
-			<Color x:Key="LightTextColor">White</Color>
-			<Style TargetType="NavigationPage">
-				<Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
-				<Setter Property="BarTextColor" Value="{StaticResource LightTextColor}" />
-			</Style>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="PrimaryDark">#1976D2</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
+            <Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
+            <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
+            <Color x:Key="LightTextColor">#ffffff</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="TextColor" Value="{StaticResource LightTextColor}" />

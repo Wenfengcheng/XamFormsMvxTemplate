@@ -6,7 +6,6 @@
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Forms.Core;
 using MvvmCross.Forms.iOS;
-using MvvmCross.iOS.Platform;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using Plugin.Settings;
