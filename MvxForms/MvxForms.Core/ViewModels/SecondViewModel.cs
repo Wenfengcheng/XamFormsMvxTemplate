@@ -8,6 +8,8 @@ using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MvxForms.Core.Services;
+using MvxForms.Core.Helpers;
 
 namespace MvxForms.Core.ViewModels
 {
@@ -18,12 +20,14 @@ namespace MvxForms.Core.ViewModels
         private readonly IUserDialogs _userDialogs;
 
         private Dictionary<string, string> _parameter;
+        private readonly ILocalizeService _localizeService;
 
-        public SecondViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings, IUserDialogs userDialogs)
+        public SecondViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings, IUserDialogs userDialogs, ILocalizeService localizeService)
         {
             _navigationService = navigationService;
             _settings = settings;
             _userDialogs = userDialogs;
+            _localizeService = localizeService;
 
             MainPageButtonText = "test";
         }
@@ -32,7 +36,9 @@ namespace MvxForms.Core.ViewModels
 
         public IMvxAsyncCommand BackCommand => new MvxAsyncCommand(async () =>
         {
-            await _userDialogs.AlertAsync("Bye bye");
+            var localizedText = _localizeService.Translate("SecondPage_ByeBye_Localization");
+
+            await _userDialogs.AlertAsync(localizedText);
             await _navigationService.Close(this);
         });
 

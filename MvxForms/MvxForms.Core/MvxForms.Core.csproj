@@ -77,12 +77,13 @@
     <Compile Include="Resources\TranslateExtension.cs" />
     <Compile Include="Services\AppSettings.cs" />
     <Compile Include="Services\IAppSettings.cs" />
-    <Compile Include="Services\ILocalizeService.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SecondViewModel.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\TranslateExtension.cs" />
+    <Compile Include="Services\ILocalizeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Acr.UserDialogs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -184,6 +185,7 @@
     <Folder Include="Model\" />
     <Folder Include="Repository\" />
     <Folder Include="Triggers\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
