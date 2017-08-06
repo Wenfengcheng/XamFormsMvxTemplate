@@ -32,7 +32,7 @@ namespace MvxForms.Core.ViewModels
 
         public IMvxAsyncCommand BackCommand => new MvxAsyncCommand(async () =>
         {
-            _userDialogs.Alert("Bye bye");
+            await _userDialogs.AlertAsync("Bye bye");
             await _navigationService.Close(this);
         });
 
