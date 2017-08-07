@@ -23,7 +23,8 @@
              StyleId="MainPageTitleLbl" />
       <Button Text="{Binding ButtonText}" Command="{Binding PressMeCommand}" />
       <Button Text="{res:Translate GoToSecondPageText}" Command="{Binding GoToSecondPageCommand}" />
-      <Button Text="To make a contribution" Command="{Binding OpenGithubUrlCommand}" />      
+      <Button Text="Native view without Forms 3.0!" Command="{Binding OpenNativeViewCommand}" />
+      <Button Text="To make a contribution" Command="{Binding OpenGithubUrlCommand}" />
     </StackLayout>
   </Grid>
 </mvx:MvxContentPage>

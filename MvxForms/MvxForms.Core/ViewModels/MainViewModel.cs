@@ -38,6 +38,12 @@ namespace MvxForms.Core.ViewModels
                 await _navigationService.Navigate<SecondViewModel, Dictionary<string, string>>(param);
             });
 
+        public IMvxAsyncCommand OpenNativeViewCommand =>
+            new MvxAsyncCommand(() =>
+            {
+                return _navigationService.Navigate<NativeViewModel>();
+            });
+
         public IMvxCommand OpenGithubUrlCommand =>
             new MvxCommand(() =>
             {
