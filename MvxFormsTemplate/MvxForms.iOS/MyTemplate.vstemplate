@@ -16,6 +16,15 @@
   <TemplateContent>
     <Project TargetFileName="MvxForms.iOS.csproj" File="MvxForms.iOS.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="AppDelegate.cs">AppDelegate.cs</ProjectItem>
+      <Folder Name="Assets.xcassets" TargetFolderName="Assets.xcassets">
+        <Folder Name="AppIcon.appiconset" TargetFolderName="AppIcon.appiconset">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Contents.json">Contents.json</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Contents.json">Contents.json</ProjectItem>
+        <Folder Name="LaunchImage.launchimage" TargetFolderName="LaunchImage.launchimage">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Contents.json">Contents.json</ProjectItem>
+        </Folder>
+      </Folder>
       <Folder Name="Bootstrap" TargetFolderName="Bootstrap">
         <ProjectItem ReplaceParameters="true" TargetFileName="JsonPluginBootstrap.cs">JsonPluginBootstrap.cs</ProjectItem>
       </Folder>
