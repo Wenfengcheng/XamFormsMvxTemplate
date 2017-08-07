@@ -1,4 +1,9 @@
-﻿using System;
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

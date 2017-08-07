@@ -1,6 +1,13 @@
-﻿using MvvmCross.Core.Navigation;
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System.Collections.Generic;
+using Xamarin.Forms;
+using System;
 
 namespace $safeprojectname$.ViewModels
 {
@@ -29,6 +36,12 @@ namespace $safeprojectname$.ViewModels
                 var param = new Dictionary<string, string> { { "ButtonText", ButtonText } };
 
                 await _navigationService.Navigate<SecondViewModel, Dictionary<string, string>>(param);
+            });
+
+        public IMvxCommand OpenGithubUrlCommand =>
+            new MvxCommand(() =>
+            {
+                Device.OpenUri(new Uri("https://github.com/JTOne123/XamFormsMvxTemplate"));
             });
 
         public string ButtonText { get; set; }

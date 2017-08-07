@@ -1,4 +1,9 @@
-﻿using NUnit.Framework;
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
+using NUnit.Framework;
 using Xamarin.UITest;
 
 namespace $safeprojectname$

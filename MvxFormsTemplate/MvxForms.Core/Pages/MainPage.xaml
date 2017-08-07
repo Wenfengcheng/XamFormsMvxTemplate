@@ -1,9 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="$safeprojectname$.Pages.MainPage"
              xmlns:res="clr-namespace:$safeprojectname$.Resources;assembly=$safeprojectname$"
-             xmlns:mvx="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms">
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms"    
+             Title="Main">
   <Grid>
     <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*"/>
@@ -22,6 +23,7 @@
              StyleId="MainPageTitleLbl" />
       <Button Text="{Binding ButtonText}" Command="{Binding PressMeCommand}" />
       <Button Text="{res:Translate GoToSecondPageText}" Command="{Binding GoToSecondPageCommand}" />
+      <Button Text="To make a contribution" Command="{Binding OpenGithubUrlCommand}" />      
     </StackLayout>
   </Grid>
 </mvx:MvxContentPage>

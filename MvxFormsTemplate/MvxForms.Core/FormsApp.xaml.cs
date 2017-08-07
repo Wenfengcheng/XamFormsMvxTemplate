@@ -4,12 +4,14 @@
 // ---------------------------------------------------------------
 
 using MvvmCross.Forms.Core;
+using Xamarin.Forms.Xaml;
 
-namespace $safeprojectname$.Pages
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+namespace $safeprojectname$
 {
-    public partial class SecondPage : MvxContentPage
+    public partial class FormsApp : MvxFormsApplication
     {
-        public SecondPage()
+        public FormsApp()
         {
             InitializeComponent();
         }

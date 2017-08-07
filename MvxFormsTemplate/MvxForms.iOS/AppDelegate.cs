@@ -1,6 +1,11 @@
-﻿using Foundation;
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
+using Foundation;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Platform;
+using MvvmCross.Forms.iOS;
 using MvvmCross.Platform;
 using UIKit;
 
@@ -9,7 +14,7 @@ namespace $safeprojectname$
     // The UIApplicationDelegate for the application. This class is responsible for launching the
     // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
     [Register("AppDelegate")]
-    public class AppDelegate : MvxApplicationDelegate
+    public class AppDelegate : MvxFormsApplicationDelegate
     {
         // class-level declarations
 
@@ -28,6 +33,8 @@ namespace $safeprojectname$
 
             var startup = Mvx.Resolve<IMvxAppStart>();
             startup.Start();
+
+            LoadApplication(setup.FormsApplication);
 
             Window.MakeKeyAndVisible();
 

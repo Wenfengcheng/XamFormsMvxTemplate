@@ -1,4 +1,9 @@
-﻿using MvvmCross.Platform;
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
+using MvvmCross.Platform;
 using System;
 using System.Globalization;
 using Xamarin.Forms;
@@ -14,11 +19,6 @@ namespace $safeprojectname$.Resources
         public TranslateExtension()
         {
             _cultureInfo = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
-
-            /*if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
-            {
-                _cultureInfo = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
-            }*/
         }
 
         public string Text { get; set; }

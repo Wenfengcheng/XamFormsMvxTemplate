@@ -1,4 +1,9 @@
-﻿using Xunit;
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
+using Xunit;
 
 namespace $safeprojectname$
 {

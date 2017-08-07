@@ -1,4 +1,9 @@
-﻿using Plugin.Settings.Abstractions;
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
+using Plugin.Settings.Abstractions;
 
 namespace $safeprojectname$.Services
 {

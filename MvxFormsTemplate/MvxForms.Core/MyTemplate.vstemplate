@@ -15,7 +15,6 @@
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="MvxForms.Core.csproj" File="MvxForms.Core.csproj" ReplaceParameters="true">
-      <ProjectItem ReplaceParameters="true" TargetFileName="App.cs">App.cs</ProjectItem>
       <Folder Name="Behaviors" TargetFolderName="Behaviors">
         <ProjectItem ReplaceParameters="true" TargetFileName="BehaviorBase.cs">BehaviorBase.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="EventToCommandBehavior.cs">EventToCommandBehavior.cs</ProjectItem>
@@ -23,9 +22,16 @@
       <Folder Name="Converters" TargetFolderName="Converters">
         <ProjectItem ReplaceParameters="true" TargetFileName="NegateBooleanConverter.cs">NegateBooleanConverter.cs</ProjectItem>
       </Folder>
+      <Folder Name="CustomViews" TargetFolderName="CustomViews" />
       <ProjectItem ReplaceParameters="true" TargetFileName="DebugTrace.cs">DebugTrace.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="FodyWeavers.xml">FodyWeavers.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="FormsApp.xaml">FormsApp.xaml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="FormsApp.xaml.cs">FormsApp.xaml.cs</ProjectItem>
+      <Folder Name="Helpers" TargetFolderName="Helpers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="TranslateExtension.cs">TranslateExtension.cs</ProjectItem>
+      </Folder>
       <Folder Name="Model" TargetFolderName="Model" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="MvxApp.cs">MvxApp.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
       <Folder Name="Pages" TargetFolderName="Pages">
         <ProjectItem ReplaceParameters="true" TargetFileName="MainPage.xaml">MainPage.xaml</ProjectItem>
@@ -55,6 +61,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="IAppSettings.cs">IAppSettings.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ILocalizeService.cs">ILocalizeService.cs</ProjectItem>
       </Folder>
+      <Folder Name="Triggers" TargetFolderName="Triggers" />
       <Folder Name="ViewModels" TargetFolderName="ViewModels">
         <ProjectItem ReplaceParameters="true" TargetFileName="MainViewModel.cs">MainViewModel.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="SecondViewModel.cs">SecondViewModel.cs</ProjectItem>

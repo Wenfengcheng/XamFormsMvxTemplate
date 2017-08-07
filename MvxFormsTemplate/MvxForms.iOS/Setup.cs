@@ -1,6 +1,11 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Forms.Core;
 using MvvmCross.Forms.iOS;
-using MvvmCross.iOS.Platform;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 using Plugin.Settings;
@@ -11,7 +16,7 @@ namespace $safeprojectname$
 {
     public class Setup : MvxFormsIosSetup
     {
-        public Setup(MvxApplicationDelegate applicationDelegate, UIWindow window)
+        public Setup(MvxFormsApplicationDelegate applicationDelegate, UIWindow window)
             : base(applicationDelegate, window)
         {
         }
@@ -24,9 +29,14 @@ namespace $safeprojectname$
             Mvx.RegisterSingleton<ISettings>(CrossSettings.Current);
         }
 
+        protected override MvxFormsApplication CreateFormsApplication()
+        {
+            return new Core.FormsApp();
+        }
+
         protected override IMvxApplication CreateApp()
         {
-            return new Core.App();
+            return new Core.MvxApp();
         }
 
         protected override IMvxTrace CreateDebugTrace()

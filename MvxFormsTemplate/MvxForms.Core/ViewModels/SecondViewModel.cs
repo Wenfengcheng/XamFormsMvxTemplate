@@ -1,8 +1,15 @@
-﻿using Acr.UserDialogs;
+﻿// ---------------------------------------------------------------
+// <author>Paul Datsyuk</author>
+// <url>https://www.linkedin.com/in/pauldatsyuk/</url>
+// ---------------------------------------------------------------
+
+using Acr.UserDialogs;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using $safeprojectname$.Services;
+using $safeprojectname$.Helpers;
 
 namespace $safeprojectname$.ViewModels
 {
@@ -13,12 +20,14 @@ namespace $safeprojectname$.ViewModels
         private readonly IUserDialogs _userDialogs;
 
         private Dictionary<string, string> _parameter;
+        private readonly ILocalizeService _localizeService;
 
-        public SecondViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings, IUserDialogs userDialogs)
+        public SecondViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings, IUserDialogs userDialogs, ILocalizeService localizeService)
         {
             _navigationService = navigationService;
             _settings = settings;
             _userDialogs = userDialogs;
+            _localizeService = localizeService;
 
             MainPageButtonText = "test";
         }
@@ -27,7 +36,9 @@ namespace $safeprojectname$.ViewModels
 
         public IMvxAsyncCommand BackCommand => new MvxAsyncCommand(async () =>
         {
-            _userDialogs.Alert("Bye bye");
+            var localizedText = _localizeService.Translate("SecondPage_ByeBye_Localization");
+
+            await _userDialogs.AlertAsync(localizedText);
             await _navigationService.Close(this);
         });
 
