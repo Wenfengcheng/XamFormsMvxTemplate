@@ -32,7 +32,7 @@ namespace $safeprojectname$
 
             Resources.AppResources.Culture = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
 
-            RegisterAppStart<ViewModels.MainViewModel>();
+            RegisterNavigationServiceAppStart<ViewModels.MainViewModel>();
         }
     }
 }
