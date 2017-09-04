@@ -185,6 +185,7 @@
     <Folder Include="Model\" />
     <Folder Include="Repository\" />
     <Folder Include="Triggers\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
