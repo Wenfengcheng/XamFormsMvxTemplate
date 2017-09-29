@@ -17,10 +17,13 @@ using Xamarin.Forms;
 namespace MvxForms.Droid
 {
     [Activity(Label = "FormsApplicationActivity", ScreenOrientation = ScreenOrientation.Portrait)]
-    public class FormsApplicationActivity : MvxFormsApplicationActivity
+    public class FormsApplicationActivity : MvxFormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
+            ToolbarResource = Resource.Layout.Toolbar;
+            TabLayoutResource = Resource.Layout.Tabbar;
+
             base.OnCreate(bundle);
 
             Forms.Init(this, bundle);

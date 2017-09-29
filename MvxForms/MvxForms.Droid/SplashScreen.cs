@@ -3,11 +3,11 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
+using Acr.UserDialogs;
 using Android.App;
 using Android.Content.PM;
 using MvvmCross.Droid.Views;
 using Xamarin.Forms;
-
 
 namespace MvxForms.Droid
 {
@@ -38,6 +38,9 @@ namespace MvxForms.Droid
         protected override void OnCreate(Android.OS.Bundle bundle)
         {
             Forms.Init(this, bundle);
+
+            UserDialogs.Init(this);
+
             // Leverage controls' StyleId attrib. to Xamarin.UITest
             Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) =>
             {
