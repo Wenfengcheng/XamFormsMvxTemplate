@@ -26,12 +26,7 @@ namespace MvxForms.Droid
 
             base.OnCreate(bundle);
 
-            Forms.Init(this, bundle);
-
             UserDialogs.Init(this);
-
-            var formsPresenter = (MvxFormsPagePresenter)Mvx.Resolve<IMvxAndroidViewPresenter>();
-            LoadApplication(formsPresenter.FormsApplication);
 
             Mvx.Resolve<IMvxAppStart>().Start();
         }
