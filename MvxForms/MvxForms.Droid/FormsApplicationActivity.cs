@@ -8,7 +8,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Forms.Droid;
+using MvvmCross.Forms.Droid.Views;
 using MvvmCross.Platform;
 
 namespace MvxForms.Droid

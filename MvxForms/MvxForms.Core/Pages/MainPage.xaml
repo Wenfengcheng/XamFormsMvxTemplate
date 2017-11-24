@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MvxForms.Core.Pages.MainPage"
              xmlns:res="clr-namespace:MvxForms.Core.Resources;assembly=MvxForms.Core"
-             xmlns:mvx="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms"    
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              Title="Main">
   <ContentPage.ToolbarItems>
     <ToolbarItem Text="Item"
@@ -31,7 +31,7 @@
                StyleId="MainPageTitleLbl" />
         <Button Text="{Binding ButtonText}" Command="{Binding PressMeCommand}" />
         <Button Text="{res:Translate GoToSecondPageText}" Command="{Binding GoToSecondPageCommand}" />
-        <Button Text="To make a contribution" Command="{Binding OpenGithubUrlCommand}" />      
+        <Button Text="To make a contribution" Command="{Binding OpenGithubUrlCommand}" />
       </StackLayout>
     </Grid>
   </ContentPage.Content>

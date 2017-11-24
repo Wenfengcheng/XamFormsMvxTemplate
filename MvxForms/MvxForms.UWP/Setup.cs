@@ -4,13 +4,18 @@
 // ---------------------------------------------------------------
 
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Forms.Core;
+using MvvmCross.Core.Views;
+using MvvmCross.Forms.Platform;
 using MvvmCross.Forms.Uwp;
+using MvvmCross.Forms.Uwp.Presenters;
 using MvvmCross.Platform;
+using MvvmCross.Platform.Logging;
 using MvvmCross.Platform.Platform;
+using MvvmCross.Uwp.Views;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 using Windows.ApplicationModel.Activation;
+using Xamarin.Forms;
 using XamlControls = Windows.UI.Xaml.Controls;
 
 namespace MvxForms.UWP
@@ -32,6 +37,8 @@ namespace MvxForms.UWP
             Mvx.RegisterSingleton<ISettings>(CrossSettings.Current);
         }
 
+        protected override MvxLogProviderType GetDefaultLogProviderType() => MvxLogProviderType.None;
+
         protected override MvxFormsApplication CreateFormsApplication()
         {
             return new Core.FormsApp();
@@ -45,6 +52,17 @@ namespace MvxForms.UWP
         protected override IMvxTrace CreateDebugTrace()
         {
             return new Core.DebugTrace();
+        }
+
+        protected override IMvxWindowsViewPresenter CreateViewPresenter(IMvxWindowsFrame rootFrame)
+        {
+            Forms.Init(_launchActivatedEventArgs);
+
+            var xamarinFormsApp = new MvxFormsApplication();
+            var presenter = new MvxFormsUwpViewPresenter(rootFrame, xamarinFormsApp);
+            Mvx.RegisterSingleton<IMvxViewPresenter>(presenter);
+
+            return presenter;
         }
     }
 }

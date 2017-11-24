@@ -4,9 +4,10 @@
 // ---------------------------------------------------------------
 
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Forms.Core;
 using MvvmCross.Forms.iOS;
+using MvvmCross.Forms.Platform;
 using MvvmCross.Platform;
+using MvvmCross.Platform.Logging;
 using MvvmCross.Platform.Platform;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
@@ -28,6 +29,8 @@ namespace MvxForms.iOS
             Mvx.RegisterSingleton<Core.Services.ILocalizeService>(new Services.LocalizeService());
             Mvx.RegisterSingleton<ISettings>(CrossSettings.Current);
         }
+
+        protected override MvxLogProviderType GetDefaultLogProviderType() => MvxLogProviderType.None;
 
         protected override MvxFormsApplication CreateFormsApplication()
         {
