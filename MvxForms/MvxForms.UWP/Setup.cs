@@ -33,8 +33,8 @@ namespace MvxForms.UWP
         {
             base.InitializeFirstChance();
 
-            Mvx.RegisterSingleton<Core.Services.ILocalizeService>(new Services.LocalizeService());
-            Mvx.RegisterSingleton<ISettings>(CrossSettings.Current);
+            Mvx.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());
+            Mvx.RegisterSingleton<ISettings>(() => CrossSettings.Current);
         }
 
         protected override MvxLogProviderType GetDefaultLogProviderType() => MvxLogProviderType.None;
