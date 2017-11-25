@@ -7,6 +7,9 @@ using Acr.UserDialogs;
 using Android.App;
 using Android.Content.PM;
 using MvvmCross.Droid.Views;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Droid.Platform;
+using Xamarin.Forms;
 
 namespace MvxForms.Droid
 {
@@ -26,9 +29,18 @@ namespace MvxForms.Droid
 
         protected override void OnCreate(Android.OS.Bundle bundle)
         {
-            base.OnCreate(bundle);
+            UserDialogs.Init(() => Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
 
-            UserDialogs.Init(this);
+            // Leverage controls' StyleId attrib. to Xamarin.UITest
+            Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) =>
+            {
+                if (!string.IsNullOrWhiteSpace(e.View.StyleId))
+                {
+                    e.NativeView.ContentDescription = e.View.StyleId;
+                }
+            };
+
+            base.OnCreate(bundle);
         }
 
         protected override void TriggerFirstNavigate()

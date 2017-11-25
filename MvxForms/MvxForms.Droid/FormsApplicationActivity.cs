@@ -3,7 +3,6 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
-using Acr.UserDialogs;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
@@ -22,8 +21,6 @@ namespace MvxForms.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
 
             base.OnCreate(bundle);
-
-            UserDialogs.Init(this);
         }
     }
 }
