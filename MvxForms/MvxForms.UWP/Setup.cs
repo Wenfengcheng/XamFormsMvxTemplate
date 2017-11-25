@@ -15,7 +15,6 @@ using MvvmCross.Uwp.Views;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 using Windows.ApplicationModel.Activation;
-using Xamarin.Forms;
 using XamlControls = Windows.UI.Xaml.Controls;
 
 namespace MvxForms.UWP
@@ -56,10 +55,7 @@ namespace MvxForms.UWP
 
         protected override IMvxWindowsViewPresenter CreateViewPresenter(IMvxWindowsFrame rootFrame)
         {
-            Forms.Init(_launchActivatedEventArgs);
-
-            var xamarinFormsApp = new MvxFormsApplication();
-            var presenter = new MvxFormsUwpViewPresenter(rootFrame, xamarinFormsApp);
+            var presenter = new MvxFormsUwpViewPresenter(rootFrame, FormsApplication);
             Mvx.RegisterSingleton<IMvxViewPresenter>(presenter);
 
             return presenter;
