@@ -7,13 +7,13 @@ using Acr.UserDialogs;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using MvvmCross.Core.ViewModels;
 using MvvmCross.Forms.Droid.Views;
-using MvvmCross.Platform;
 
 namespace MvxForms.Droid
 {
-    [Activity(Label = "FormsApplicationActivity", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "FormsApplicationActivity",
+              ScreenOrientation = ScreenOrientation.Portrait,
+              LaunchMode = LaunchMode.SingleTask)]
     public class FormsApplicationActivity : MvxFormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -24,8 +24,6 @@ namespace MvxForms.Droid
             base.OnCreate(bundle);
 
             UserDialogs.Init(this);
-
-            Mvx.Resolve<IMvxAppStart>().Start();
         }
     }
 }
