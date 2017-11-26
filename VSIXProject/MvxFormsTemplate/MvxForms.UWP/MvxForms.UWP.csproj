@@ -127,7 +127,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvxForms.Core\MvxForms.Core.csproj">
+    <ProjectReference Include="..\$ext_safeprojectname$.Core\$ext_safeprojectname$.Core.csproj">
       <Project>{74043e51-ef7b-4ce1-af3f-7612ed1d05b6}</Project>
       <Name>$ext_safeprojectname$.Core</Name>
     </ProjectReference>
