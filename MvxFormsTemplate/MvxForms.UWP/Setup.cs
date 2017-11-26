@@ -4,10 +4,14 @@
 // ---------------------------------------------------------------
 
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Forms.Core;
+using MvvmCross.Core.Views;
+using MvvmCross.Forms.Platform;
 using MvvmCross.Forms.Uwp;
+using MvvmCross.Forms.Uwp.Presenters;
 using MvvmCross.Platform;
+using MvvmCross.Platform.Logging;
 using MvvmCross.Platform.Platform;
+using MvvmCross.Uwp.Views;
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 using Windows.ApplicationModel.Activation;
@@ -28,9 +32,11 @@ namespace $safeprojectname$
         {
             base.InitializeFirstChance();
 
-            Mvx.RegisterSingleton<Core.Services.ILocalizeService>(new Services.LocalizeService());
-            Mvx.RegisterSingleton<ISettings>(CrossSettings.Current);
+            Mvx.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());
+            Mvx.RegisterSingleton<ISettings>(() => CrossSettings.Current);
         }
+
+        protected override MvxLogProviderType GetDefaultLogProviderType() => MvxLogProviderType.None;
 
         protected override MvxFormsApplication CreateFormsApplication()
         {
@@ -45,6 +51,14 @@ namespace $safeprojectname$
         protected override IMvxTrace CreateDebugTrace()
         {
             return new Core.DebugTrace();
+        }
+
+        protected override IMvxWindowsViewPresenter CreateViewPresenter(IMvxWindowsFrame rootFrame)
+        {
+            var presenter = new MvxFormsUwpViewPresenter(rootFrame, FormsApplication);
+            Mvx.RegisterSingleton<IMvxViewPresenter>(presenter);
+
+            return presenter;
         }
     }
 }

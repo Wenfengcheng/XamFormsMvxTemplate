@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>MvxForms.Droid</Name>
-    <Description>&lt;No description available&gt;</Description>
+    <Description>Xamarin Forms + MvvmCross Template</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
@@ -22,8 +22,10 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="JsonPluginBootstrap.cs">JsonPluginBootstrap.cs</ProjectItem>
       </Folder>
       <Folder Name="CustomRenderers" TargetFolderName="CustomRenderers" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="environment.txt">environment.txt</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="FormsApplicationActivity.cs">FormsApplicationActivity.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="LinkerPleaseInclude.cs">LinkerPleaseInclude.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="MainApplication.cs">MainApplication.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
       <Folder Name="Properties" TargetFolderName="Properties">
         <ProjectItem ReplaceParameters="true" TargetFileName="AndroidManifest.xml">AndroidManifest.xml</ProjectItem>
@@ -42,11 +44,15 @@
         <Folder Name="drawable-xxxhdpi" TargetFolderName="drawable-xxxhdpi" />
         <Folder Name="layout" TargetFolderName="layout">
           <ProjectItem ReplaceParameters="false" TargetFileName="SplashScreen.axml">SplashScreen.axml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Tabbar.xml">Tabbar.xml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Toolbar.xml">Toolbar.xml</ProjectItem>
         </Folder>
         <ProjectItem ReplaceParameters="true" TargetFileName="Resource.Designer.cs">Resource.Designer.cs</ProjectItem>
         <Folder Name="values" TargetFolderName="values">
+          <ProjectItem ReplaceParameters="true" TargetFileName="colors.xml">colors.xml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="SplashStyle.xml">SplashStyle.xml</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="Strings.xml">Strings.xml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="style.xml">style.xml</ProjectItem>
         </Folder>
       </Folder>
       <Folder Name="Services" TargetFolderName="Services">

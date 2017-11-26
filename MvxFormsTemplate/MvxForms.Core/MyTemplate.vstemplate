@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>MvxForms.Core</Name>
-    <Description>&lt;No description available&gt;</Description>
+    <Description>Xamarin Forms + MvvmCross Template</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
@@ -24,6 +24,7 @@
       </Folder>
       <Folder Name="CustomViews" TargetFolderName="CustomViews" />
       <ProjectItem ReplaceParameters="true" TargetFileName="DebugTrace.cs">DebugTrace.cs</ProjectItem>
+      <Folder Name="Effects" TargetFolderName="Effects" />
       <ProjectItem ReplaceParameters="true" TargetFileName="FodyWeavers.xml">FodyWeavers.xml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="FormsApp.xaml">FormsApp.xaml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="FormsApp.xaml.cs">FormsApp.xaml.cs</ProjectItem>
@@ -52,7 +53,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="AppResources.Designer.cs">AppResources.Designer.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="AppResources.ru-RU.resx">AppResources.ru-RU.resx</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="AppResources.ru-RU.Designer.cs">AppResources.ru-RU.Designer.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="AppResources.ua-UK.resx">AppResources.ua-UK.resx</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AppResources.uk-UA.resx">AppResources.uk-UA.resx</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="AppResources.ua-UK.Designer.cs">AppResources.ua-UK.Designer.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="TranslateExtension.cs">TranslateExtension.cs</ProjectItem>
       </Folder>

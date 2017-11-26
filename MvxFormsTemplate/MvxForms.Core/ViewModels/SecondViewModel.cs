@@ -7,7 +7,6 @@ using Acr.UserDialogs;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using $safeprojectname$.Services;
 using $safeprojectname$.Helpers;
 
@@ -42,14 +41,12 @@ namespace $safeprojectname$.ViewModels
             await _navigationService.Close(this);
         });
 
-        public override Task Initialize(Dictionary<string, string> parameter)
+        public override void Prepare(Dictionary<string, string> parameter)
         {
             _parameter = parameter;
 
             if (_parameter != null && _parameter.ContainsKey("ButtonText"))
                 MainPageButtonText = "ButtonText";
-
-            return Task.FromResult(true);
         }
 
         public int SuperNumber
