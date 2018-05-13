@@ -3,7 +3,7 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
-using MvvmCross.Platform;
+using MvvmCross;
 using System;
 using System.Globalization;
 using Xamarin.Forms;

@@ -4,11 +4,12 @@
 // ---------------------------------------------------------------
 
 using Acr.UserDialogs;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
-using System.Collections.Generic;
-using MvxForms.Core.Services;
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using MvxForms.Core.Helpers;
+using MvxForms.Core.Services;
+using System.Collections.Generic;
 
 namespace MvxForms.Core.ViewModels
 {

@@ -3,34 +3,21 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
+using MvvmCross.Logging;
 using System;
 using System.Diagnostics;
-using MvvmCross.Platform.Platform;
 
 namespace MvxForms.Core
 {
-    public class DebugTrace : IMvxTrace
+    public class DebugTrace : IMvxLog
     {
-        public void Trace(MvxTraceLevel level, string tag, Func<string> message)
-        {
-            Debug.WriteLine(tag + ":" + level + ":" + message());
-        }
+        public bool IsLogLevelEnabled(MvxLogLevel logLevel) => true;
 
-        public void Trace(MvxTraceLevel level, string tag, string message)
+        public bool Log(MvxLogLevel logLevel, Func<string> messageFunc, Exception exception = null, params object[] formatParameters)
         {
-            Debug.WriteLine(tag + ":" + level + ":" + message);
-        }
+            Debug.WriteLine(logLevel + ":" + messageFunc());
 
-        public void Trace(MvxTraceLevel level, string tag, string message, params object[] args)
-        {
-            try
-            {
-                Debug.WriteLine(tag + ":" + level + ":" + message, args);
-            }
-            catch (FormatException)
-            {
-                Trace(MvxTraceLevel.Error, tag, "Exception during trace of {0} {1}", level, message);
-            }
+            return true;
         }
     }
 }

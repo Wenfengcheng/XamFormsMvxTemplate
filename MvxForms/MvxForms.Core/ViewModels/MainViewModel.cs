@@ -3,11 +3,12 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
+using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using System;
 
 namespace MvxForms.Core.ViewModels
 {
