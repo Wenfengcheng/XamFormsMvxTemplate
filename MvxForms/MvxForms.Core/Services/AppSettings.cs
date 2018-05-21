@@ -10,7 +10,6 @@ namespace MvxForms.Core.Services
     public class AppSettings : IAppSettings
     {
         public const string SuperNumberKey = "SuperNumberKey";
-
         public const int SuperNumberDefaultValue = 1;
 
         public int SuperNumber

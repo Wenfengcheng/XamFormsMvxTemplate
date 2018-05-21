@@ -52,4 +52,62 @@
         <PackageReference Include="Xamarin.Forms" Version="3.0.0.446417" />
         <PackageReference Include="Xamarin.Essentials" Version="0.6.0-preview" />
     </ItemGroup>
+    <ItemGroup>
+        <Compile Update="Resources\AppResources.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>AppResources.resx</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Update="Resources\AppResources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Update="Resources\AppResources.en-US.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>AppResources.en-US.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Update="Resources\AppResources.de.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>AppResources.de.resx</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Update="Resources\AppResources.de.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>AppResources.de.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Update="Resources\AppResources.ru.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>AppResources.ru.resx</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Update="Resources\AppResources.ru.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>AppResources.ru.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Update="Resources\AppResources.uk.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>AppResources.uk.resx</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Update="Resources\AppResources.uk.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>AppResources.uk.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
 </Project>

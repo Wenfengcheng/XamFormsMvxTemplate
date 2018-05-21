@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvxForms.Core", "MvxForms\MvxForms.Core\MvxForms.Core.csproj", "{74043E51-EF7B-4CE1-AF3F-7612ED1D05B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvxForms.Core", "MvxForms\MvxForms.Core\MvxForms.Core.csproj", "{74043E51-EF7B-4CE1-AF3F-7612ED1D05B6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvxForms.iOS", "MvxForms\MvxForms.iOS\MvxForms.iOS.csproj", "{88A375C3-8567-47B7-A040-CF48B7049986}"
 EndProject
