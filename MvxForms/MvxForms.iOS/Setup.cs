@@ -5,8 +5,6 @@
 
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Ios.Core;
-using Plugin.Settings;
-using Plugin.Settings.Abstractions;
 
 namespace MvxForms.iOS
 {
@@ -17,7 +15,6 @@ namespace MvxForms.iOS
             base.InitializeFirstChance();
 
             Mvx.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());
-            Mvx.RegisterSingleton<ISettings>(() => CrossSettings.Current);
         }
     }
 }

@@ -5,8 +5,6 @@
 
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Android.Core;
-using Plugin.Settings;
-using Plugin.Settings.Abstractions;
 
 namespace MvxForms.Droid
 {
@@ -17,7 +15,6 @@ namespace MvxForms.Droid
             base.InitializeFirstChance();
 
             Mvx.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());
-            Mvx.RegisterSingleton<ISettings>(() => CrossSettings.Current);
         }
     }
 }
