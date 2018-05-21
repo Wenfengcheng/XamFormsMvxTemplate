@@ -6,9 +6,10 @@
 using Acr.UserDialogs;
 using Android.App;
 using Android.Content.PM;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Droid.Platform;
+using Android.OS;
+using MvvmCross;
+using MvvmCross.Forms.Platforms.Android.Views;
+using MvvmCross.Platforms.Android;
 using Xamarin.Forms;
 
 namespace MvxForms.Droid
@@ -20,7 +21,7 @@ namespace MvxForms.Droid
         , Theme = "@style/Theme.Splash"
         , NoHistory = true
         , ScreenOrientation = ScreenOrientation.Portrait)]
-    public class SplashScreen : MvxSplashScreenActivity
+    public class SplashScreen : MvxFormsSplashScreenActivity<Setup, Core.MvxApp, Core.FormsApp>
     {
         public SplashScreen()
             : base(Resource.Layout.SplashScreen)
@@ -43,10 +44,10 @@ namespace MvxForms.Droid
             base.OnCreate(bundle);
         }
 
-        protected override void TriggerFirstNavigate()
+        protected override void RunAppStart(Bundle bundle)
         {
             StartActivity(typeof(FormsApplicationActivity));
-            base.TriggerFirstNavigate();
+            base.RunAppStart(bundle);
         }
     }
 }
