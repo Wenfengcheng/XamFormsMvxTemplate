@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------
 
 using MvvmCross.Forms.Platforms.Uap.Views;
+using Windows.ApplicationModel.Activation;
 
 namespace MvxForms.UWP
 {
@@ -17,5 +18,17 @@ namespace MvxForms.UWP
 
     public abstract class UwpApp : MvxWindowsApplication<Setup, Core.MvxApp, Core.FormsApp, MainPage>
     {
+        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        {
+
+#if DEBUG
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                this.DebugSettings.EnableFrameRateCounter = true;
+            }
+#endif
+
+            base.OnLaunched(e);
+        }
     }
 }
