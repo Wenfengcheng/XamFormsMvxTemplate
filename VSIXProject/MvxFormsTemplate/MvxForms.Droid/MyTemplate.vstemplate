@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>MvxForms.Droid</Name>
-    <Description>Xamarin Forms + MvvmCross Template</Description>
+    <Description>&lt;No description available&gt;</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
@@ -17,9 +17,6 @@
     <Project TargetFileName="MvxForms.Droid.csproj" File="MvxForms.Droid.csproj" ReplaceParameters="true">
       <Folder Name="Assets" TargetFolderName="Assets">
         <ProjectItem ReplaceParameters="true" TargetFileName="AboutAssets.txt">AboutAssets.txt</ProjectItem>
-      </Folder>
-      <Folder Name="Bootstrap" TargetFolderName="Bootstrap">
-        <ProjectItem ReplaceParameters="true" TargetFileName="JsonPluginBootstrap.cs">JsonPluginBootstrap.cs</ProjectItem>
       </Folder>
       <Folder Name="CustomRenderers" TargetFolderName="CustomRenderers" />
       <ProjectItem ReplaceParameters="true" TargetFileName="environment.txt">environment.txt</ProjectItem>

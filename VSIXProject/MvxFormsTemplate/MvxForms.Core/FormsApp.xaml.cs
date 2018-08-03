@@ -3,7 +3,7 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
-using MvvmCross.Forms.Platform;
+using MvvmCross.Forms.Core;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]

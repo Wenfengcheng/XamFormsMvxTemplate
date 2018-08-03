@@ -4,11 +4,11 @@
 // ---------------------------------------------------------------
 
 using Acr.UserDialogs;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Platform.IoC;
-using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Json;
+using MvvmCross;
+using MvvmCross.Base;
+using MvvmCross.IoC;
+using MvvmCross.Plugin.Json;
+using MvvmCross.ViewModels;
 
 namespace $safeprojectname$
 {
@@ -32,7 +32,7 @@ namespace $safeprojectname$
 
             Resources.AppResources.Culture = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
 
-            RegisterNavigationServiceAppStart<ViewModels.MainViewModel>();
+            RegisterAppStart<ViewModels.MainViewModel>();
         }
     }
 }

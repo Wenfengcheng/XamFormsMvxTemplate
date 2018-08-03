@@ -4,11 +4,12 @@
 // ---------------------------------------------------------------
 
 using Acr.UserDialogs;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
-using System.Collections.Generic;
-using $safeprojectname$.Services;
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using $safeprojectname$.Helpers;
+using $safeprojectname$.Services;
+using System.Collections.Generic;
 
 namespace $safeprojectname$.ViewModels
 {
