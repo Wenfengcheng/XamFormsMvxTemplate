@@ -8,6 +8,7 @@ using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace $safeprojectname$.ViewModels
@@ -39,10 +40,10 @@ namespace $safeprojectname$.ViewModels
                 await _navigationService.Navigate<SecondViewModel, Dictionary<string, string>>(param);
             });
 
-        public IMvxCommand OpenGithubUrlCommand =>
-            new MvxCommand(() =>
+        public IMvxCommand OpenUrlCommand =>
+            new MvxAsyncCommand<string>(async (url) =>
             {
-                Device.OpenUri(new Uri("https://github.com/JTOne123/XamFormsMvxTemplate"));
+                await Browser.OpenAsync(url, BrowserLaunchType.External);
             });
 
         public string ButtonText { get; set; }
