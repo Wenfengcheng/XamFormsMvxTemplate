@@ -3,6 +3,7 @@
 This is a project to build a Visual Studio 2017 extension to help you start developing with Xamarin.Forms 3.1 and MvvmCross 6.1
 
 You can download the extension from [the Visual Studio gallery](http://linkshrink.net/Mu7/VisualStudioMarketplace) or [download VSIX from this repo](http://linkshrink.net/Mu7/VSIXProject) (after ads).
+
 The previous version of VSIX for MvvmCross 5.5 is available by the following link [OldVSIX](http://linkshrink.net/Mu7/OldVSIXProject5) (after ads)
 
 ## Requirements
