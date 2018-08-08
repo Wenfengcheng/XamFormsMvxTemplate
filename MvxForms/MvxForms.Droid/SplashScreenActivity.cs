@@ -21,9 +21,9 @@ namespace MvxForms.Droid
         , Theme = "@style/Theme.Splash"
         , NoHistory = true
         , ScreenOrientation = ScreenOrientation.Portrait)]
-    public class SplashScreen : MvxFormsSplashScreenAppCompatActivity<Setup, Core.MvxApp, Core.FormsApp>
+    public class SplashScreenActivity : MvxFormsSplashScreenAppCompatActivity<Setup, Core.MvxApp, Core.FormsApp>
     {
-        public SplashScreen()
+        public SplashScreenActivity()
             : base(Resource.Layout.SplashScreen)
         {
         }
