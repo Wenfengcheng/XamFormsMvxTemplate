@@ -31,7 +31,9 @@
                StyleId="MainPageTitleLbl" />
                 <Button Text="{Binding ButtonText}" Command="{Binding PressMeCommand}" />
                 <Button Text="{res:Translate GoToSecondPageText}" Command="{Binding GoToSecondPageCommand}" />
-                <Button Text="To make a contribution" Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/JTOne123/XamFormsMvxTemplate" />
+                <Button Text="Write something in the Log" Command="{Binding WriteLogCommand}" />
+
+                <Button Text="To make a contribution" Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/JTOne123/XamFormsMvxTemplate" Margin="0,20, 0, 0"/>
 
                 <Button Text="To support the author please watch ads" Command="{Binding OpenUrlCommand}" CommandParameter="http://linkshrink.net/Mu7/XamFormsMvxTemplate" Margin="0,20, 0, 0"/>
                 <Button Text="Buy Me a Coffee" Command="{Binding OpenUrlCommand}" CommandParameter="https://www.buymeacoffee.com/pauldatsiuk" />

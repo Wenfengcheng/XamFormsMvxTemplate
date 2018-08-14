@@ -46,6 +46,12 @@ namespace MvxForms.Core.ViewModels
                 await Browser.OpenAsync(url, BrowserLaunchType.External);
             });
 
+        public IMvxCommand WriteLogCommand =>
+            new MvxCommand(() =>
+            {
+                Log.Log(MvvmCross.Logging.MvxLogLevel.Debug, () => "Something in the Log", new Exception("Unknown exception occurred"));
+            });
+
         public string ButtonText { get; set; }
 
         public int SuperNumber

@@ -5,6 +5,8 @@
 
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Ios.Core;
+using MvvmCross.Logging;
+using Serilog;
 
 namespace MvxForms.iOS
 {
@@ -15,6 +17,18 @@ namespace MvxForms.iOS
             base.InitializeFirstChance();
 
             Mvx.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());
+        }
+
+        public override MvxLogProviderType GetDefaultLogProviderType() => MvxLogProviderType.Serilog;
+
+        protected override IMvxLogProvider CreateLogProvider()
+        {
+            Log.Logger = new LoggerConfiguration()
+                        .MinimumLevel.Debug()
+                        .WriteTo.NSLog()
+                        .CreateLogger();
+
+            return base.CreateLogProvider();
         }
     }
 }
