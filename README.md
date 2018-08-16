@@ -30,6 +30,8 @@ Other small features that can be found in the project are:
 * New MvvmCross navigation service
 * Xamarin.Essentials
 * Dialogs
+* Logging (Serilog with Xamarin Sinks)
+* Master-Detail
 * xUnit (testing in VS and after build)
 * (will continue to add more interesting stuff)
 
