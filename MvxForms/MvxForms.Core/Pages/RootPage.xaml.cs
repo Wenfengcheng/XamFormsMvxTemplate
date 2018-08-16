@@ -5,15 +5,23 @@
 
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
+using System;
 
 namespace MvxForms.Core.Pages
 {
-    //[MvxMasterDetailPagePresentation]
-    public partial class SecondPage : MvxContentPage
+    [MvxMasterDetailPagePresentation(MasterDetailPosition.Root, WrapInNavigationPage = false)]
+    public partial class RootPage : MvxMasterDetailPage
     {
-        public SecondPage()
+        public RootPage()
         {
             InitializeComponent();
+
+            this.IsPresentedChanged += RootPage_IsPresentedChanged;
+        }
+
+        private void RootPage_IsPresentedChanged(object sender, EventArgs e)
+        {
+            //To Do Something
         }
     }
 }

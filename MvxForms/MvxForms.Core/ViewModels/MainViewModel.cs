@@ -3,6 +3,7 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
+using Acr.UserDialogs;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -17,11 +18,13 @@ namespace MvxForms.Core.ViewModels
     {
         private readonly IMvxNavigationService _navigationService;
         private readonly Services.IAppSettings _settings;
+        private readonly IUserDialogs _userDialogs;
 
-        public MainViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings)
+        public MainViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings, IUserDialogs userDialogs)
         {
             _navigationService = navigationService;
             _settings = settings;
+            _userDialogs = userDialogs;
 
             ButtonText = Resources.AppResources.MainPageButton;
         }
@@ -50,6 +53,12 @@ namespace MvxForms.Core.ViewModels
             new MvxCommand(() =>
             {
                 Log.Log(MvvmCross.Logging.MvxLogLevel.Debug, () => "Something in the Log", new Exception("Unknown exception occurred"));
+            });
+
+        public IMvxAsyncCommand MasterDetailModeCommand =>
+            new MvxAsyncCommand(async () =>
+            {
+                await _userDialogs.AlertAsync("Uncomment \n//[MvxMasterDetailPagePresentation] \n//RegisterAppStart<ViewModels.RootViewModel>(); \nand relaunch again");
             });
 
         public string ButtonText { get; set; }

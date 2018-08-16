@@ -60,6 +60,12 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
+        <EmbeddedResource Update="Pages\MasterPage.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Pages\RootPage.xaml">
+          <Generator>MSBuild:Compile</Generator>
+        </EmbeddedResource>
         <EmbeddedResource Update="Resources\AppResources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>AppResources.Designer.cs</LastGenOutput>

@@ -32,6 +32,7 @@
                 <Button Text="{Binding ButtonText}" Command="{Binding PressMeCommand}" />
                 <Button Text="{res:Translate GoToSecondPageText}" Command="{Binding GoToSecondPageCommand}" />
                 <Button Text="Write something in the Log" Command="{Binding WriteLogCommand}" />
+                <Button Text="Master-Detail Mode" Command="{Binding MasterDetailModeCommand}" />
 
                 <Button Text="To make a contribution" Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/JTOne123/XamFormsMvxTemplate" Margin="0,20, 0, 0"/>
 
