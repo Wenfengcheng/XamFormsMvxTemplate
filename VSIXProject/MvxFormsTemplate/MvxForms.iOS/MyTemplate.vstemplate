@@ -27,6 +27,9 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       </Folder>
       <Folder Name="Resources" TargetFolderName="Resources">
+        <ProjectItem ReplaceParameters="false" TargetFileName="ic_menu_white@1x.png">ic_menu_white@1x.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="ic_menu_white@2x.png">ic_menu_white@2x.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="ic_menu_white@3x.png">ic_menu_white@3x.png</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="Icon-60@2x.png">Icon-60@2x.png</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="Icon-72.png">Icon-72.png</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="Icon-72@2x.png">Icon-72@2x.png</ProjectItem>

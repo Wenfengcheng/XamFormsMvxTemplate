@@ -11,8 +11,8 @@
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-    <Icon>__TemplateIcon.ico</Icon>
     <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="MvxForms.Core.csproj" File="MvxForms.Core.csproj" ReplaceParameters="true">
@@ -29,6 +29,10 @@
       <Folder Name="Pages" TargetFolderName="Pages">
         <ProjectItem ReplaceParameters="true" TargetFileName="MainPage.xaml">MainPage.xaml</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="MainPage.xaml.cs">MainPage.xaml.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MasterPage.xaml">MasterPage.xaml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MasterPage.xaml.cs">MasterPage.xaml.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RootPage.xaml">RootPage.xaml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RootPage.xaml.cs">RootPage.xaml.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="SecondPage.xaml">SecondPage.xaml</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="SecondPage.xaml.cs">SecondPage.xaml.cs</ProjectItem>
       </Folder>
@@ -48,6 +52,8 @@
       </Folder>
       <Folder Name="ViewModels" TargetFolderName="ViewModels">
         <ProjectItem ReplaceParameters="true" TargetFileName="MainViewModel.cs">MainViewModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MasterViewModel.cs">MasterViewModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RootViewModel.cs">RootViewModel.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="SecondViewModel.cs">SecondViewModel.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="DebugTrace.cs">DebugTrace.cs</ProjectItem>

@@ -18,7 +18,7 @@ namespace $safeprojectname$.Resources
 
         public TranslateExtension()
         {
-            _cultureInfo = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
+            _cultureInfo = Mvx.IoCProvider.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
         }
 
         public string Text { get; set; }

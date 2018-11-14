@@ -8,10 +8,10 @@ using MvvmCross.Forms.Views;
 
 namespace $safeprojectname$.Pages
 {
-    //[MvxMasterDetailPagePresentation]
-    public partial class SecondPage : MvxContentPage
+    [MvxMasterDetailPagePresentation(MasterDetailPosition.Master)]
+    public partial class MasterPage : MvxContentPage
     {
-        public SecondPage()
+        public MasterPage()
         {
             InitializeComponent();
         }
