@@ -7,10 +7,10 @@
              Title="Main">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Item"
-         Command="{Binding OpenWebsitePricesPage}"
-         Order="Primary"
-         Priority="0"
-         Icon="Icon.png" />
+             Command="{Binding ToolbarTestClickCommand}"
+             Order="Primary"
+             Priority="0"
+             Icon="Icon.png" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
@@ -26,10 +26,10 @@
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="1" Grid.Column="1">
                 <Label Text="{res:Translate MainPageTitle}" 
-               VerticalOptions="Center"
-               HorizontalOptions="Center" 
-               StyleId="MainPageTitleLbl" />
-                <Button Text="{Binding ButtonText}" Command="{Binding PressMeCommand}" />
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" 
+                       AutomationId="helloLbl"/>
+                <Button Text="{Binding ButtonText}" Command="{Binding PressMeCommand}" AutomationId="thankYouBtn"/>
                 <Button Text="{res:Translate GoToSecondPageText}" Command="{Binding GoToSecondPageCommand}" />
                 <Button Text="Write something in the Log" Command="{Binding WriteLogCommand}" />
                 <Button Text="Master-Detail Mode" Command="{Binding MasterDetailModeCommand}" />

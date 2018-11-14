@@ -16,7 +16,7 @@ namespace MvxForms.Droid
         {
             base.InitializeFirstChance();
 
-            Mvx.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());
+            Mvx.IoCProvider.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());
         }
 
         public override MvxLogProviderType GetDefaultLogProviderType() => MvxLogProviderType.Serilog;

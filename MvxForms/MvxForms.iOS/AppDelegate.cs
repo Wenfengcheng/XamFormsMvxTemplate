@@ -27,6 +27,11 @@ namespace MvxForms.iOS
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
             Window.MakeKeyAndVisible();
 
+#if ENABLE_TEST_CLOUD
+            // requires Xamarin Test Cloud Agent
+            Xamarin.Calabash.Start();
+#endif
+
             return base.FinishedLaunching(app, options);
         }
 

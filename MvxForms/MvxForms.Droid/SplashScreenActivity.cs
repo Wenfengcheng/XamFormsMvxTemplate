@@ -11,6 +11,7 @@ using MvvmCross;
 using MvvmCross.Forms.Platforms.Android.Views;
 using MvvmCross.Platforms.Android;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace MvxForms.Droid
 {
@@ -30,7 +31,7 @@ namespace MvxForms.Droid
 
         protected override void OnCreate(Android.OS.Bundle bundle)
         {
-            UserDialogs.Init(() => Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
+            UserDialogs.Init(() => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
 
             // Leverage controls' StyleId attrib. to Xamarin.UITest
             Forms.ViewInitialized += (object sender, ViewInitializedEventArgs e) =>
@@ -44,10 +45,10 @@ namespace MvxForms.Droid
             base.OnCreate(bundle);
         }
 
-        protected override void RunAppStart(Bundle bundle)
+        protected override Task RunAppStartAsync(Bundle bundle)
         {
             StartActivity(typeof(FormsApplicationActivity));
-            base.RunAppStart(bundle);
+            return Task.CompletedTask;
         }
     }
 }

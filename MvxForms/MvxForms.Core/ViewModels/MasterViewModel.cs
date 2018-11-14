@@ -10,11 +10,11 @@ namespace MvxForms.Core.ViewModels
 {
     public class MasterViewModel : MvxViewModel
     {
-        private readonly IMvxNavigationService _navigationService;
+        private readonly IMvxNavigationService navigationService;
 
         public MasterViewModel(IMvxNavigationService navigationService)
         {
-            _navigationService = navigationService;
+            this.navigationService = navigationService;
         }
     }
 }

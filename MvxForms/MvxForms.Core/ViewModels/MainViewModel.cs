@@ -5,26 +5,32 @@
 
 using Acr.UserDialogs;
 using MvvmCross.Commands;
+using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace MvxForms.Core.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
-        private readonly IMvxNavigationService _navigationService;
-        private readonly Services.IAppSettings _settings;
-        private readonly IUserDialogs _userDialogs;
+        private readonly IMvxNavigationService navigationService;
+        private readonly IMvxLogProvider mvxLogProvider;
+        private readonly Services.IAppSettings settings;
+        private readonly IUserDialogs userDialogs;
 
-        public MainViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings, IUserDialogs userDialogs)
+        private readonly IMvxLog log;
+
+        public MainViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider, Services.IAppSettings settings, IUserDialogs userDialogs)
         {
-            _navigationService = navigationService;
-            _settings = settings;
-            _userDialogs = userDialogs;
+            this.navigationService = navigationService;
+            this.mvxLogProvider = mvxLogProvider;
+            this.settings = settings;
+            this.userDialogs = userDialogs;
+
+            this.log = mvxLogProvider.GetLogFor(GetType());
 
             ButtonText = Resources.AppResources.MainPageButton;
         }
@@ -40,33 +46,39 @@ namespace MvxForms.Core.ViewModels
             {
                 var param = new Dictionary<string, string> { { "ButtonText", ButtonText } };
 
-                await _navigationService.Navigate<SecondViewModel, Dictionary<string, string>>(param);
+                await navigationService.Navigate<SecondViewModel, Dictionary<string, string>>(param);
             });
 
         public IMvxCommand OpenUrlCommand =>
             new MvxAsyncCommand<string>(async (url) =>
             {
-                await Browser.OpenAsync(url, BrowserLaunchType.External);
+                await Browser.OpenAsync(url, BrowserLaunchMode.External);
             });
 
         public IMvxCommand WriteLogCommand =>
             new MvxCommand(() =>
             {
-                Log.Log(MvvmCross.Logging.MvxLogLevel.Debug, () => "Something in the Log", new Exception("Unknown exception occurred"));
+                log.Log(MvxLogLevel.Debug, () => "Something in the Log", new Exception("Unknown exception occurred"));
             });
 
         public IMvxAsyncCommand MasterDetailModeCommand =>
             new MvxAsyncCommand(async () =>
             {
-                await _userDialogs.AlertAsync("Uncomment \n//[MvxMasterDetailPagePresentation] \n//RegisterAppStart<ViewModels.RootViewModel>(); \nand relaunch again");
+                await userDialogs.AlertAsync("Uncomment \n//[MvxMasterDetailPagePresentation] \n//RegisterAppStart<ViewModels.RootViewModel>(); \nand relaunch again");
+            });
+
+        public IMvxAsyncCommand ToolbarTestClickCommand =>
+            new MvxAsyncCommand(async () =>
+            {
+                await userDialogs.AlertAsync("This is Toolbar Item Click");
             });
 
         public string ButtonText { get; set; }
 
         public int SuperNumber
         {
-            get { return _settings.SuperNumber; }
-            set { _settings.SuperNumber = value; }
+            get { return settings.SuperNumber; }
+            set { settings.SuperNumber = value; }
         }
     }
 }

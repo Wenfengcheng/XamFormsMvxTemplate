@@ -10,11 +10,11 @@ namespace MvxForms.Core.ViewModels
 {
     public class RootViewModel : MvxViewModel
     {
-        private readonly IMvxNavigationService _navigationService;
+        private readonly IMvxNavigationService navigationService;
 
         public RootViewModel(IMvxNavigationService navigationService)
         {
-            _navigationService = navigationService;
+            this.navigationService = navigationService;
         }
 
         public override void ViewAppearing()
@@ -23,8 +23,8 @@ namespace MvxForms.Core.ViewModels
 
             MvxNotifyTask.Create(async () =>
             {
-                await _navigationService.Navigate<MasterViewModel>();
-                await _navigationService.Navigate<MainViewModel>();
+                await navigationService.Navigate<MasterViewModel>();
+                await navigationService.Navigate<MainViewModel>();
             });
         }
     }

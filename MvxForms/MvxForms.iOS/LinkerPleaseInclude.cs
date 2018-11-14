@@ -17,7 +17,7 @@ namespace MvxForms.iOS
 {
     // This class is never actually executed, but when Xamarin linking is enabled it does ensure types and properties
     // are preserved in the deployed app
-    [Preserve(AllMembers = true)]
+    [Foundation.Preserve(AllMembers = true)]
     public class LinkerPleaseInclude
     {
         public void Include(MvxTaskBasedBindingContext c)
@@ -43,6 +43,7 @@ namespace MvxForms.iOS
         {
             textField.Text = textField.Text + "";
             textField.EditingChanged += (sender, args) => { textField.Text = ""; };
+            textField.EditingDidEnd += (sender, args) => { textField.Text = ""; };
         }
 
         public void Include(UITextView textView)
@@ -139,11 +140,6 @@ namespace MvxForms.iOS
             Console.ForegroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.DarkGray;
-        }
-
-        public void Include(MvvmCross.Plugin.Json.Plugin plugin)
-        {
-            plugin.Load();
         }
     }
 }
