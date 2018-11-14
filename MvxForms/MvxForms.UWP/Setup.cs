@@ -6,8 +6,6 @@
 using MvvmCross;
 using MvvmCross.Forms.Platforms.Uap.Core;
 using MvvmCross.Logging;
-using Plugin.Settings;
-using Plugin.Settings.Abstractions;
 using Serilog;
 using System.IO;
 using Windows.Storage;
@@ -20,8 +18,7 @@ namespace MvxForms.UWP
         {
             base.InitializeFirstChance();
 
-            Mvx.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());
-            Mvx.RegisterSingleton<ISettings>(() => CrossSettings.Current);
+            Mvx.IoCProvider.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());
         }
 
         public override MvxLogProviderType GetDefaultLogProviderType() => MvxLogProviderType.Serilog;
