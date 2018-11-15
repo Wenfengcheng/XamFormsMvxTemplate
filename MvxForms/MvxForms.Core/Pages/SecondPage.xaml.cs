@@ -8,7 +8,8 @@ using MvvmCross.Forms.Views;
 
 namespace MvxForms.Core.Pages
 {
-    //[MvxMasterDetailPagePresentation]
+    //[MvxTabbedPagePresentation] //For Tabs Mode
+    //[MvxMasterDetailPagePresentation] // For Master Details Mode
     public partial class SecondPage : MvxContentPage
     {
         public SecondPage()

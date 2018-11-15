@@ -64,7 +64,13 @@ namespace MvxForms.Core.ViewModels
         public IMvxAsyncCommand MasterDetailModeCommand =>
             new MvxAsyncCommand(async () =>
             {
-                await userDialogs.AlertAsync("Uncomment \n//[MvxMasterDetailPagePresentation] \n//RegisterAppStart<ViewModels.RootViewModel>(); \nand relaunch again");
+                await userDialogs.AlertAsync("Uncomment: \n//[MvxMasterDetailPagePresentation] \n\n//RegisterAppStart<ViewModels.RootViewModel>(); \n\n\nand relaunch again");
+            });
+
+        public IMvxAsyncCommand TabsModeCommand =>
+            new MvxAsyncCommand(async () =>
+            {
+                await userDialogs.AlertAsync("Uncomment: \n//[MvxTabbedPagePresentation] \n\n//RegisterAppStart<ViewModels.TabbedRootViewModel>(); \n\n\nand relaunch again");
             });
 
         public IMvxAsyncCommand ToolbarTestClickCommand =>

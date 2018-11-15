@@ -5,14 +5,14 @@
 
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
+using System;
 
 namespace MvxForms.Core.Pages
 {
-    //[MvxTabbedPagePresentation] //For Tabs Mode
-    //[MvxMasterDetailPagePresentation] // For Master Details Mode
-    public partial class MainPage : MvxContentPage
+    [MvxMasterDetailPagePresentation(NoHistory = true)]
+    public partial class TabbedRootPage : MvxTabbedPage
     {
-        public MainPage()
+        public TabbedRootPage()
         {
             InitializeComponent();
         }
