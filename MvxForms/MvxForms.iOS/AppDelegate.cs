@@ -4,7 +4,12 @@
 // ---------------------------------------------------------------
 
 using Foundation;
+using MvvmCross;
 using MvvmCross.Forms.Platforms.Ios.Core;
+using MvvmCross.Logging;
+using ObjCRuntime;
+using System;
+using System.Threading.Tasks;
 using UIKit;
 
 namespace MvxForms.iOS
@@ -24,6 +29,10 @@ namespace MvxForms.iOS
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            AppDomain.CurrentDomain.UnhandledException += App_UnhandledException;
+            TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
+            Runtime.MarshalManagedException += OnMarshalManagedException;
+
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
             Window.MakeKeyAndVisible();
 
@@ -33,6 +42,33 @@ namespace MvxForms.iOS
 #endif
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void OnMarshalManagedException(object sender, MarshalManagedExceptionEventArgs args)
+        {
+            var mvxLogProvider = Mvx.IoCProvider.Resolve<IMvxLogProvider>();
+            var mvxLog = mvxLogProvider.GetLogFor(GetType());
+            mvxLog.TraceException(args.Exception.Message, args.Exception);
+        }
+
+        private void TaskSchedulerOnUnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs args)
+        {
+            var mvxLogProvider = Mvx.IoCProvider.Resolve<IMvxLogProvider>();
+            var mvxLog = mvxLogProvider.GetLogFor(GetType());
+            mvxLog.TraceException(args.Exception.Message, args.Exception);
+        }
+
+        private void App_UnhandledException(object sender, UnhandledExceptionEventArgs args)
+        {
+            var mvxLogProvider = Mvx.IoCProvider.Resolve<IMvxLogProvider>();
+            var mvxLog = mvxLogProvider.GetLogFor(GetType());
+            var exception = args.ExceptionObject as Exception;
+            mvxLog.TraceException(args.ToString(), exception);
+        }
+
+        public override void ReceiveMemoryWarning(UIApplication application)
+        {
+            GC.Collect();
         }
 
         public override void OnResignActivation(UIApplication application)
@@ -77,5 +113,3 @@ namespace MvxForms.iOS
         }
     }
 }
-
-
