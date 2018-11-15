@@ -26,6 +26,7 @@ Other small features that can be found in the project are:
 * Dialogs
 * Logging (Serilog with Xamarin Sinks)
 * Master-Detail
+* Tabs
 * xUnit (testing in VS and after build)
 * UI Tests
 * (will continue to add more interesting stuff)
