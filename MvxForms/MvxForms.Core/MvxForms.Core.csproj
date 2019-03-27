@@ -53,6 +53,9 @@
         <PackageReference Include="Xamarin.Essentials" Version="0.11.0-preview" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Update="Pages\ThirdPage.xaml.cs">
+          <DependentUpon>ThirdPage.xaml</DependentUpon>
+        </Compile>
         <Compile Update="Pages\TabbedRootPage.xaml.cs">
           <DependentUpon>TabbedRootPage.xaml</DependentUpon>
         </Compile>

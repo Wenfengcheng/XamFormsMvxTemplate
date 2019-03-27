@@ -46,7 +46,8 @@ namespace MvxForms.Core.ViewModels
             {
                 var param = new Dictionary<string, string> { { "ButtonText", ButtonText } };
 
-                await navigationService.Navigate<SecondViewModel, Dictionary<string, string>>(param);
+                var result = await navigationService.Navigate<SecondViewModel, Dictionary<string, string>, SecondViewModelResult>(param);
+                var a = 1;
             });
 
         public IMvxCommand OpenUrlCommand =>

@@ -13,7 +13,12 @@ using System.Collections.Generic;
 
 namespace MvxForms.Core.ViewModels
 {
-    public class SecondViewModel : MvxViewModel<Dictionary<string, string>>
+    public class SecondViewModelResult
+    {
+        public string Result { get; set; }
+    }
+
+    public class SecondViewModel : MvxViewModel<Dictionary<string, string>, SecondViewModelResult>
     {
         private readonly IMvxNavigationService navigationService;
         private readonly Services.IAppSettings settings;
@@ -39,8 +44,15 @@ namespace MvxForms.Core.ViewModels
             var localizedText = localizeService.Translate("SecondPage_ByeBye_Localization");
 
             await userDialogs.AlertAsync(localizedText);
-            await navigationService.Close(this);
+            await navigationService.Close(this, new SecondViewModelResult { Result = "Back button clicked" });
         });
+
+        public IMvxAsyncCommand GoToThirdPageCommand =>
+            new MvxAsyncCommand(async () =>
+            {
+                var t = await navigationService.Navigate<ThirdViewModel>();
+                var a = 1;
+            });
 
         public override void Prepare(Dictionary<string, string> parameter)
         {

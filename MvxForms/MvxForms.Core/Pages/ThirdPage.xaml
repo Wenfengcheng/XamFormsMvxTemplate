@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MvxForms.Core.Pages.SecondPage"
+             x:Class="MvxForms.Core.Pages.ThirdPage"
              xmlns:res="clr-namespace:MvxForms.Core.Resources;assembly=MvxForms.Core"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              Title="Second">
-    <StackLayout>
-        <Entry Text="{Binding SuperNumber}"/>
-        <Label Text="{Binding MainPageButtonText}"/>
-        <Button Text="To Third Page" Command="{Binding GoToThirdPageCommand}" />
-        <Button Text="Back" Command="{Binding BackCommand}" />
-    </StackLayout>
+  <StackLayout>
+    <Label Text="Third Page"/>
+  </StackLayout>
 </mvx:MvxContentPage>
