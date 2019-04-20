@@ -4,11 +4,11 @@
 // ---------------------------------------------------------------
 
 using Acr.UserDialogs;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
-using MvvmCross.Platform.IoC;
-using MvvmCross.Platform.Platform;
-using MvvmCross.Plugins.Json;
+using MvvmCross;
+using MvvmCross.Base;
+using MvvmCross.IoC;
+using MvvmCross.Plugin.Json;
+using MvvmCross.ViewModels;
 
 namespace $safeprojectname$
 {
@@ -26,13 +26,14 @@ namespace $safeprojectname$
                 .AsTypes()
                 .RegisterAsLazySingleton();
 
-            Mvx.RegisterType<Services.IAppSettings, Services.AppSettings>();
-            Mvx.RegisterType<IMvxJsonConverter, MvxJsonConverter>();
-            Mvx.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
+            Mvx.IoCProvider.RegisterType<Services.IAppSettings, Services.AppSettings>();
+            Mvx.IoCProvider.RegisterType<IMvxJsonConverter, MvxJsonConverter>();
+            Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
 
-            Resources.AppResources.Culture = Mvx.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
+            Resources.AppResources.Culture = Mvx.IoCProvider.Resolve<Services.ILocalizeService>().GetCurrentCultureInfo();
 
-            RegisterNavigationServiceAppStart<ViewModels.MainViewModel>();
+            RegisterAppStart<ViewModels.MainViewModel>();
+            //RegisterAppStart<ViewModels.RootViewModel>();
         }
     }
 }

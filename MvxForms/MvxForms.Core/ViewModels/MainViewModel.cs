@@ -3,23 +3,34 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
-using System.Collections.Generic;
-using Xamarin.Forms;
+using Acr.UserDialogs;
+using MvvmCross.Commands;
+using MvvmCross.Logging;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using System;
+using System.Collections.Generic;
+using Xamarin.Essentials;
 
 namespace MvxForms.Core.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
-        private readonly IMvxNavigationService _navigationService;
-        private readonly Services.IAppSettings _settings;
+        private readonly IMvxNavigationService navigationService;
+        private readonly IMvxLogProvider mvxLogProvider;
+        private readonly Services.IAppSettings settings;
+        private readonly IUserDialogs userDialogs;
 
-        public MainViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings)
+        private readonly IMvxLog log;
+
+        public MainViewModel(IMvxNavigationService navigationService, IMvxLogProvider mvxLogProvider, Services.IAppSettings settings, IUserDialogs userDialogs)
         {
-            _navigationService = navigationService;
-            _settings = settings;
+            this.navigationService = navigationService;
+            this.mvxLogProvider = mvxLogProvider;
+            this.settings = settings;
+            this.userDialogs = userDialogs;
+
+            this.log = mvxLogProvider.GetLogFor(GetType());
 
             ButtonText = Resources.AppResources.MainPageButton;
         }
@@ -35,21 +46,46 @@ namespace MvxForms.Core.ViewModels
             {
                 var param = new Dictionary<string, string> { { "ButtonText", ButtonText } };
 
-                await _navigationService.Navigate<SecondViewModel, Dictionary<string, string>>(param);
+                var result = await navigationService.Navigate<SecondViewModel, Dictionary<string, string>, SecondViewModelResult>(param);
+                var a = 1;
             });
 
-        public IMvxCommand OpenGithubUrlCommand =>
+        public IMvxCommand OpenUrlCommand =>
+            new MvxAsyncCommand<string>(async (url) =>
+            {
+                await Browser.OpenAsync(url, BrowserLaunchMode.External);
+            });
+
+        public IMvxCommand WriteLogCommand =>
             new MvxCommand(() =>
             {
-                Device.OpenUri(new Uri("https://github.com/JTOne123/XamFormsMvxTemplate"));
+                log.Log(MvxLogLevel.Debug, () => "Something in the Log", new Exception("Unknown exception occurred"));
+            });
+
+        public IMvxAsyncCommand MasterDetailModeCommand =>
+            new MvxAsyncCommand(async () =>
+            {
+                await userDialogs.AlertAsync("Uncomment: \n//[MvxMasterDetailPagePresentation] \n\n//RegisterAppStart<ViewModels.RootViewModel>(); \n\n\nand relaunch again");
+            });
+
+        public IMvxAsyncCommand TabsModeCommand =>
+            new MvxAsyncCommand(async () =>
+            {
+                await userDialogs.AlertAsync("Uncomment: \n//[MvxTabbedPagePresentation] \n\n//RegisterAppStart<ViewModels.TabbedRootViewModel>(); \n\n\nand relaunch again");
+            });
+
+        public IMvxAsyncCommand ToolbarTestClickCommand =>
+            new MvxAsyncCommand(async () =>
+            {
+                await userDialogs.AlertAsync("This is Toolbar Item Click");
             });
 
         public string ButtonText { get; set; }
 
         public int SuperNumber
         {
-            get { return _settings.SuperNumber; }
-            set { _settings.SuperNumber = value; }
+            get { return settings.SuperNumber; }
+            set { settings.SuperNumber = value; }
         }
     }
 }

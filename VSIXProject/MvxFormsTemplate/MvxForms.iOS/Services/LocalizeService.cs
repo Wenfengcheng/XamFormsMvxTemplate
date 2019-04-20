@@ -11,7 +11,7 @@ namespace $safeprojectname$.Services
 {
     public class LocalizeService : Core.Services.ILocalizeService
     {
-        public System.Globalization.CultureInfo GetCurrentCultureInfo()
+        public CultureInfo GetCurrentCultureInfo()
         {
             var netLanguage = "en";
             var prefLanguageOnly = "en";

@@ -4,9 +4,7 @@
 // ---------------------------------------------------------------
 
 using Foundation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Forms.iOS;
-using MvvmCross.Platform;
+using MvvmCross.Forms.Platforms.Ios.Core;
 using UIKit;
 
 namespace $safeprojectname$
@@ -14,7 +12,7 @@ namespace $safeprojectname$
     // The UIApplicationDelegate for the application. This class is responsible for launching the
     // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
     [Register("AppDelegate")]
-    public class AppDelegate : MvxFormsApplicationDelegate
+    public class AppDelegate : MvxFormsApplicationDelegate<Setup, Core.MvxApp, Core.FormsApp>
     {
         // class-level declarations
 
@@ -27,18 +25,14 @@ namespace $safeprojectname$
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
-
-            var setup = new Setup(this, Window);
-            setup.Initialize();
-
-            var startup = Mvx.Resolve<IMvxAppStart>();
-            startup.Start();
-
-            LoadApplication(setup.FormsApplication);
-
             Window.MakeKeyAndVisible();
 
-            return true;
+#if ENABLE_TEST_CLOUD
+            // requires Xamarin Test Cloud Agent
+            Xamarin.Calabash.Start();
+#endif
+
+            return base.FinishedLaunching(app, options);
         }
 
         public override void OnResignActivation(UIApplication application)

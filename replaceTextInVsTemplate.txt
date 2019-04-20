@@ -1,4 +1,4 @@
-replace next text in all project files
+replace next text in all project files (MvxForms to $ext_safeprojectname$)
 
 1)
   <ItemGroup>

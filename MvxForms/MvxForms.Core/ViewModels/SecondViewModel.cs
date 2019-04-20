@@ -4,29 +4,35 @@
 // ---------------------------------------------------------------
 
 using Acr.UserDialogs;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
-using System.Collections.Generic;
-using MvxForms.Core.Services;
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using MvxForms.Core.Helpers;
+using MvxForms.Core.Services;
+using System.Collections.Generic;
 
 namespace MvxForms.Core.ViewModels
 {
-    public class SecondViewModel : MvxViewModel<Dictionary<string, string>>
+    public class SecondViewModelResult
     {
-        private readonly IMvxNavigationService _navigationService;
-        private readonly Services.IAppSettings _settings;
-        private readonly IUserDialogs _userDialogs;
+        public string Result { get; set; }
+    }
+
+    public class SecondViewModel : MvxViewModel<Dictionary<string, string>, SecondViewModelResult>
+    {
+        private readonly IMvxNavigationService navigationService;
+        private readonly Services.IAppSettings settings;
+        private readonly IUserDialogs userDialogs;
+        private readonly ILocalizeService localizeService;
 
         private Dictionary<string, string> _parameter;
-        private readonly ILocalizeService _localizeService;
 
         public SecondViewModel(IMvxNavigationService navigationService, Services.IAppSettings settings, IUserDialogs userDialogs, ILocalizeService localizeService)
         {
-            _navigationService = navigationService;
-            _settings = settings;
-            _userDialogs = userDialogs;
-            _localizeService = localizeService;
+            this.navigationService = navigationService;
+            this.settings = settings;
+            this.userDialogs = userDialogs;
+            this.localizeService = localizeService;
 
             MainPageButtonText = "test";
         }
@@ -35,11 +41,18 @@ namespace MvxForms.Core.ViewModels
 
         public IMvxAsyncCommand BackCommand => new MvxAsyncCommand(async () =>
         {
-            var localizedText = _localizeService.Translate("SecondPage_ByeBye_Localization");
+            var localizedText = localizeService.Translate("SecondPage_ByeBye_Localization");
 
-            await _userDialogs.AlertAsync(localizedText);
-            await _navigationService.Close(this);
+            await userDialogs.AlertAsync(localizedText);
+            await navigationService.Close(this, new SecondViewModelResult { Result = "Back button clicked" });
         });
+
+        public IMvxAsyncCommand GoToThirdPageCommand =>
+            new MvxAsyncCommand(async () =>
+            {
+                var t = await navigationService.Navigate<ThirdViewModel>();
+                var a = 1;
+            });
 
         public override void Prepare(Dictionary<string, string> parameter)
         {
@@ -51,8 +64,8 @@ namespace MvxForms.Core.ViewModels
 
         public int SuperNumber
         {
-            get { return _settings.SuperNumber; }
-            set { _settings.SuperNumber = value; }
+            get { return settings.SuperNumber; }
+            set { settings.SuperNumber = value; }
         }
     }
 }

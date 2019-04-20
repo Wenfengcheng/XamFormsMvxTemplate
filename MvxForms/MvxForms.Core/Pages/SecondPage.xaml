@@ -5,9 +5,10 @@
              xmlns:res="clr-namespace:MvxForms.Core.Resources;assembly=MvxForms.Core"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              Title="Second">
-  <StackLayout>
-    <Entry Text="{Binding SuperNumber}"/>
-    <Label Text="{Binding MainPageButtonText}"/>
-    <Button Text="Back" Command="{Binding BackCommand}" />
-  </StackLayout>
+    <StackLayout>
+        <Entry Text="{Binding SuperNumber}"/>
+        <Label Text="{Binding MainPageButtonText}"/>
+        <Button Text="To Third Page" Command="{Binding GoToThirdPageCommand}" />
+        <Button Text="Back" Command="{Binding BackCommand}" />
+    </StackLayout>
 </mvx:MvxContentPage>

@@ -6,7 +6,8 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using MvvmCross.Forms.Droid.Views;
+using Android.Runtime;
+using MvvmCross.Forms.Platforms.Android.Views;
 
 namespace MvxForms.Droid
 {
@@ -21,6 +22,14 @@ namespace MvxForms.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
 
             base.OnCreate(bundle);
+
+            Xamarin.Essentials.Platform.Init(this, bundle);
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+        {
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

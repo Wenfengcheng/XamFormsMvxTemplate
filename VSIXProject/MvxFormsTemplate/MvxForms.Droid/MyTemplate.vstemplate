@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>MvxForms.Droid</Name>
-    <Description>Xamarin Forms + MvvmCross Template</Description>
+    <Description>&lt;No description available&gt;</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
@@ -18,15 +18,13 @@
       <Folder Name="Assets" TargetFolderName="Assets">
         <ProjectItem ReplaceParameters="true" TargetFileName="AboutAssets.txt">AboutAssets.txt</ProjectItem>
       </Folder>
-      <Folder Name="Bootstrap" TargetFolderName="Bootstrap">
-        <ProjectItem ReplaceParameters="true" TargetFileName="JsonPluginBootstrap.cs">JsonPluginBootstrap.cs</ProjectItem>
-      </Folder>
       <Folder Name="CustomRenderers" TargetFolderName="CustomRenderers" />
       <ProjectItem ReplaceParameters="true" TargetFileName="environment.txt">environment.txt</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="FormsApplicationActivity.cs">FormsApplicationActivity.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="LinkerPleaseInclude.cs">LinkerPleaseInclude.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MainApplication.cs">MainApplication.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="proguard.cfg">proguard.cfg</ProjectItem>
       <Folder Name="Properties" TargetFolderName="Properties">
         <ProjectItem ReplaceParameters="true" TargetFileName="AndroidManifest.xml">AndroidManifest.xml</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
@@ -59,7 +57,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="LocalizeService.cs">LocalizeService.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="Setup.cs">Setup.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="SplashScreen.cs">SplashScreen.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="SplashScreenActivity.cs">SplashScreenActivity.cs</ProjectItem>
       <Folder Name="Views" TargetFolderName="Views" />
     </Project>
   </TemplateContent>

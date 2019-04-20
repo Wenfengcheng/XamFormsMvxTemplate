@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>MvxForms.iOS</Name>
-    <Description>Xamarin Forms + MvvmCross Template</Description>
+    <Description>&lt;No description available&gt;</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
@@ -16,18 +16,6 @@
   <TemplateContent>
     <Project TargetFileName="MvxForms.iOS.csproj" File="MvxForms.iOS.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="AppDelegate.cs">AppDelegate.cs</ProjectItem>
-      <Folder Name="Assets.xcassets" TargetFolderName="Assets.xcassets">
-        <Folder Name="AppIcon.appiconset" TargetFolderName="AppIcon.appiconset">
-          <ProjectItem ReplaceParameters="true" TargetFileName="Contents.json">Contents.json</ProjectItem>
-        </Folder>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Contents.json">Contents.json</ProjectItem>
-        <Folder Name="LaunchImage.launchimage" TargetFolderName="LaunchImage.launchimage">
-          <ProjectItem ReplaceParameters="true" TargetFileName="Contents.json">Contents.json</ProjectItem>
-        </Folder>
-      </Folder>
-      <Folder Name="Bootstrap" TargetFolderName="Bootstrap">
-        <ProjectItem ReplaceParameters="true" TargetFileName="JsonPluginBootstrap.cs">JsonPluginBootstrap.cs</ProjectItem>
-      </Folder>
       <Folder Name="CustomRenderers" TargetFolderName="CustomRenderers" />
       <ProjectItem ReplaceParameters="false" TargetFileName="Entitlements.plist">Entitlements.plist</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="Info.plist">Info.plist</ProjectItem>
@@ -39,6 +27,9 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       </Folder>
       <Folder Name="Resources" TargetFolderName="Resources">
+        <ProjectItem ReplaceParameters="false" TargetFileName="ic_menu_white@1x.png">ic_menu_white@1x.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="ic_menu_white@2x.png">ic_menu_white@2x.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="ic_menu_white@3x.png">ic_menu_white@3x.png</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="Icon-60@2x.png">Icon-60@2x.png</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="Icon-72.png">Icon-72.png</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="Icon-72@2x.png">Icon-72@2x.png</ProjectItem>

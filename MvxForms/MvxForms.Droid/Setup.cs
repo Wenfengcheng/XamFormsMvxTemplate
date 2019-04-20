@@ -3,48 +3,32 @@
 // <url>https://www.linkedin.com/in/pauldatsyuk/</url>
 // ---------------------------------------------------------------
 
-using Android.Content;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Forms.Droid.Platform;
-using MvvmCross.Forms.Platform;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Logging;
-using MvvmCross.Platform.Platform;
-using Plugin.Settings;
-using Plugin.Settings.Abstractions;
+using MvvmCross;
+using MvvmCross.Forms.Platforms.Android.Core;
+using MvvmCross.Logging;
+using Serilog;
 
 namespace MvxForms.Droid
 {
-    public class Setup : MvxFormsAndroidSetup
+    public class Setup : MvxFormsAndroidSetup<Core.MvxApp, Core.FormsApp>
     {
-        public Setup(Context applicationContext)
-            : base(applicationContext)
-        {
-        }
-
         protected override void InitializeFirstChance()
         {
             base.InitializeFirstChance();
 
-            Mvx.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());
-            Mvx.RegisterSingleton<ISettings>(() => CrossSettings.Current);
+            Mvx.IoCProvider.RegisterSingleton<Core.Services.ILocalizeService>(() => new Services.LocalizeService());
         }
 
-        protected override MvxLogProviderType GetDefaultLogProviderType() => MvxLogProviderType.None;
+        public override MvxLogProviderType GetDefaultLogProviderType() => MvxLogProviderType.Serilog;
 
-        protected override MvxFormsApplication CreateFormsApplication()
+        protected override IMvxLogProvider CreateLogProvider()
         {
-            return new Core.FormsApp();
-        }
+            Log.Logger = new LoggerConfiguration()
+                        .MinimumLevel.Debug()
+                        .WriteTo.AndroidLog()
+                        .CreateLogger();
 
-        protected override IMvxApplication CreateApp()
-        {
-            return new Core.MvxApp();
-        }
-
-        protected override IMvxTrace CreateDebugTrace()
-        {
-            return new Core.DebugTrace();
+            return base.CreateLogProvider();
         }
     }
 }
